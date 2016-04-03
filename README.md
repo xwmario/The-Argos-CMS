@@ -28,6 +28,7 @@ Features:<br/>
 - Responsive 404 error page
 - Very secured (On top of Mustache PHP and mysqli)
 - Template system (I have 2 new finished templates for this cms)
+- Google Recaptcha 2.0
 - Cookie policy bar
 - Ajax chat
 - HTML editor (in admin area)
