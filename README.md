@@ -2,7 +2,7 @@
 Argos is best Gaming CMS in Bulgaria.
 This is my CMS - Argos. Version 1.7. Pushed from private category in my personal site.<br/>
 Features:<br/>
-- Responsive design
+- Responsive design (Bootstrap 3.3.6)
 - Poll (add/delete/edit)
 - Greyfish (fully integrated)
 - News system + comments (edit,add,delete functions)
