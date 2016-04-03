@@ -19,6 +19,7 @@ Features:<br/>
 - Adding Menus/Edit Menus
 - Weather from sinoptik.bg (in admin area)
 - RSS from vesti.bg (in admin area)
+- Last forum topics (from phpbb 3.1.x)
 - Forum stats (in admin area)
 - Seo friendly urls
 - Forum stats (in admin area too)
