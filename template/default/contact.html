@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!-- created by dedihost.org -->
+<html lang="en">
+<head>
+{{> meta }}
+</head>
+<body>
+ 
+
+{{> header }}
+
+{{> slider }}
+
+{{> chat }}
+
+
+<div class="left_menu">
+<div class="box">
+<div class="boxhead_L"><span class="boxhead_titles"><i class="fa fa-envelope"></i> {{lang_contacts}}</span></div>
+{{lang_contact_info}}
+<hr/>
+<div class="row">
+<div class="col-md-8">
+<script src='https://www.google.com/recaptcha/api.js'></script>
+<form method="post">
+
+<div class="input-group">
+<span class="input-group-addon"><i class="fa fa-question-circle"></i></span>
+<input type="text" name="your-question" placeholder="{{lang_your_question}}" class="form-control">
+</div>
+<br/>
+<div class="input-group">
+<span class="input-group-addon"><i class="fa fa-user"></i></span>
+<input type="text" name="your-name" placeholder="{{lang_your_name}}" class="form-control">
+</div>
+<br/>
+<div class="input-group">
+<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+<input type="email" name="your-email" placeholder="{{lang_your_email}}" class="form-control">
+</div>
+<br/>
+<textarea class="form-control" rows="3" name="your-text" placeholder="{{lang_your_text}}"></textarea><br/>
+<div class="g-recaptcha" data-sitekey="{{grecap_sitekey}}"></div>
+
+<br/>
+<br/>
+<input type="submit" class="btn btn-md btn-success" name="submit_contact" value="{{lang_send}}"/>
+
+</form>
+
+{{#submit_contact}}<br/><div class="alert alert-{{submit_contact_alert}}"><i class="fa fa-{{submit_contact_ico}}"></i> {{submit_contact}}</div> {{/submit_contact}}
+
+</div></div>
+
+</div>
+
+</div>
+
+{{> right_menu }}
+
+
+<div class="clear clearfix"></div>
+
+
+{{> advertise }}
+
+{{> stats }}
+
+{{> footer }}

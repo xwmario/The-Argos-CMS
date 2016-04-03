@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!-- created by dedihost.org -->
+<html lang="en">
+<head>
+{{> meta }}
+</head>
+<body class="skin-red">
+{{> header }}
+
+{{> sidebar }}
+
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+          <h1>
+           Създаване на нова страница в сайта
+          </h1>
+		  <hr style="border-color:red"/>
+		  
+	     <div class='row'>
+	    <div class='col-md-12'>
+	    
+	    <div class="box box-danger">
+	    <div class="box-header with-border">
+	    <h3 class="box-title">Добавяне на страница</h3>
+	    </div>
+	    <div class="box-body">		   
+	    
+		<form method="post" style="max-width:700px">
+		
+		<div class="input-group">
+		<span class="input-group-addon"><i class="fa fa-pencil"></i></span>
+		<input type="text" name="page_name" placeholder="Име на страницата" class="form-control" required>
+		</div>(пример: kontakti). Задължително на латиница. Може да използвате _ или -, за да отделяте текст!
+		<br/>
+		
+		<div class="input-group">
+		<span class="input-group-addon"><i class="fa fa-pencil"></i></span>
+		<input type="text" name="page_title" placeholder="Тайтъл на страницата" class="form-control" required>
+		</div>
+		Тайтъла е заглавието на страницата.
+		<br/> 
+		
+		<select class="form-control" name="page_type">
+		<option value="menu">С дясно ориентирано меню</option>
+		<option value="wmenu">Без меню</option>
+		</select>
+		Ако сте избрали опцията без меню, няма да има меню. За пример страницата 'За нас'.
+		<br/>
+ 
+		
+		<textarea class="darcy" data-editor="php" name="page_content" style="height:200px;width:100%" required></textarea><br/>
+		<input type="submit" name="submit_page" value="Изпрати" class="btn btn-md btn-success"/>
+
+        </form>		
+	    {{#pages_add}}<br/> {{&pages_add}} {{/pages_add}}
+			 
+		</div>
+	    </div>
+	    
+	    </div>
+	     </div>
+
+		  
+          <ol class="breadcrumb">
+            <li><a href="index.php"><i class="fa fa-dashboard"></i> Admin</a></li>
+            <li class="active">Добави страница</li>
+          </ol>
+        </section>
+
+  
+      </div><!-- /.content-wrapper -->
+
+{{> footer }}

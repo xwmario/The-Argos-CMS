@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!-- created by dedihost.org -->
+<html lang="en">
+<head>
+{{> meta }}
+</head>
+<body class="skin-red">
+{{> header }}
+
+{{> sidebar }}
+
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+          <h1>
+           Редактиране на анкетите в сайта
+          </h1>
+		  <hr style="border-color:red"/>
+		  
+	     <div class='row'>
+	    <div class='col-md-12'>
+	    
+	    <div class="box box-danger">
+	    <div class="box-header with-border">
+	    <h3 class="box-title">Редактиране на анкети</h3>
+	    </div>
+	    <div class="box-body">		   
+	    <div class="alert alert-warning"><i class="fa fa-exclamation-triangle"></i> Когато изтривате анкети, моля рефрешнете тази страница, за да влязат промените в сила!</div>
+		
+		 <table class="table table-striped">
+                    <tr>
+                      <th>Въпрос</th>
+                      <th>Гласували</th>
+					  <th>Изтрий</th>
+	
+                    </tr>
+					{{#allpolls}}
+                    <tr class="poll-{{poll_id}}">
+                      <td><a class="venobox" data-type="iframe" href="ajax_served/edit_polls.php?id={{poll_id}}">{{poll_question}}</a></td>
+                      <td>
+                      {{poll_votes}}
+                      </td>
+					 <td><a href="ajax_served/remove_poll.php?id={{poll_id}}" class="delete_poll" style="color:red"><i class="fa fa-times"></i></a></td>
+                    </tr>
+				  {{/allpolls}}
+				</table>
+				{{&no_have_polls}}
+				{{&pagination_polls}}
+			 
+		</div>
+	    </div>
+	    
+	    </div>
+	     </div>
+
+		  
+          <ol class="breadcrumb">
+            <li><a href="index.php"><i class="fa fa-dashboard"></i> Admin</a></li>
+            <li class="active">Редактирай анкетите</li>
+          </ol>
+        </section>
+
+  
+      </div><!-- /.content-wrapper -->
+
+{{> footer }}

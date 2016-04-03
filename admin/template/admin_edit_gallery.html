@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!-- created by dedihost.org -->
+<html lang="en">
+<head>
+{{> meta }}
+</head>
+<body class="skin-red">
+{{> header }}
+
+{{> sidebar }}
+
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+          <h1>
+           Редактиране на снимките в галерията
+          </h1>
+		  <hr style="border-color:red"/>
+		  
+	     <div class='row'>
+	    <div class='col-md-12'>
+	    
+	    <div class="box box-danger">
+	    <div class="box-header with-border">
+	    <h3 class="box-title">Редактиране на галерията</h3>
+	    </div>
+	    <div class="box-body">		   
+ 
+		 <table class="table table-striped">
+                    <tr>
+                      <th>Снимка</th>
+                      <th>Качил</th>
+					  <th>Изтрий</th>
+	
+                    </tr>
+					{{#allpics}}
+                    <tr class="pic-{{pic_id}}">
+                      <td><img src="../uploads/images/{{pic_link}}" alt="" width="160" height="120"/></td>
+                      <td>
+                      {{pic_uploader}}
+                      </td>
+					  <td><a href="ajax_served/remove_pic.php?id={{pic_id}}" class="delete_pic" data-mail="{{pic_id}}" style="color:red"><i class="fa fa-times"></i></a></td>
+                    </tr>
+				  {{/allpics}}
+				</table>
+				{{&no_have_pics}}
+				{{&pagination_pics}}
+			 
+		</div>
+	    </div>
+	    
+	    </div>
+	     </div>
+
+		  
+          <ol class="breadcrumb">
+            <li><a href="index.php"><i class="fa fa-dashboard"></i> Admin</a></li>
+            <li class="active">Редактирай галерията</li>
+          </ol>
+        </section>
+
+  
+      </div><!-- /.content-wrapper -->
+
+{{> footer }}

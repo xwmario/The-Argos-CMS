@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!-- created by dedihost.org -->
+<html lang="en">
+<head>
+{{> meta }}
+</head>
+<body>
+ 
+
+{{> header }}
+
+{{> slider }}
+
+{{> chat }}
+
+
+
+<div class="box">
+<div class="boxhead_L"><span class="boxhead_titles"><i class="fa fa-server"></i> {{lang_upload_img}}</span></div>
+
+{{#img_upload_enable}}
+<br/><a href="{{baseurl}}/gallery.php"><div class="btn btn-md btn-success">{{lang_gallery}}</div></a><br/>
+{{#is_logged}}
+<br/>
+<form action="includes/dropzone.php" class="dropzone"></form>
+{{/is_logged}}
+{{^is_logged}}
+<br/>
+<div class="alert alert-warning"><i class="fa fa-exclamation-triangle"></i> {{lang_register_now}}</div>
+{{/is_logged}}
+{{/img_upload_enable}}
+{{^img_upload_enable}}
+<br/>
+<div class="alert alert-warning"><i class="fa fa-exclamation-triangle"></i> {{lang_imgupload_temp_disabled}}</div>
+{{/img_upload_enable}}
+
+</div>
+
+
+
+{{> advertise }}
+
+{{> stats }}
+
+{{> footer }}

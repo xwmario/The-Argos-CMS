@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!-- created by dedihost.org -->
+<html lang="en">
+<head>
+{{> meta }}
+</head>
+<body class="skin-red">
+{{> header }}
+
+{{> sidebar }}
+
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+          <h1>
+           HTML Editor
+          </h1>
+		  <hr style="border-color:red"/>
+		  
+	     <div class='row'>
+	    <div class='col-md-12'>
+	    
+	    <div class="box box-danger">
+	    <div class="box-header with-border">
+	    <h3 class="box-title">HTML Editor на страници</h3>
+	    </div>
+	    <div class="box-body">	
+         
+		<form  method="post" class="form-control">
+		<select class="htmlfiles" name="htmlfiles">
+		<option>select a file</option>
+		{{&thelist}}
+		</select>
+		</form>
+		
+	    <form method="post" class="submitform">
+	    <textarea id="textarea_1" name="content" class="form-control" style="height:600px"></textarea>
+		<input type="hidden" name="html_file" class="html_file" value=""/>
+		<input type="submit" name="submithtml" class="btn btn-md btn-success submit_html" value="save"/>
+	    </form>
+			<div id="res1" style="max-width:100%"></div>
+		</div>
+	    </div>
+	    
+	    </div>
+	     </div>
+
+		  
+          <ol class="breadcrumb">
+            <li><a href="index.php"><i class="fa fa-dashboard"></i> Admin</a></li>
+            <li class="active">HTML Editor</li>
+          </ol>
+        </section>
+
+  
+      </div><!-- /.content-wrapper -->
+
+{{> footer }}

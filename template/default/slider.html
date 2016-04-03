@@ -1,0 +1,29 @@
+{{#no_sliders}}
+
+{{/no_sliders}}
+{{^no_sliders}}
+<div class="slider_argos">
+<ul class="pgwSlider">
+{{#get_sliders}}
+{{#slider_is_link}}
+   <li>
+        <a href="{{slider_link}}" target="_blank">
+         <img src="{{slider_img}}" alt="">
+	    <span>{{slider_text}}</span>
+        </a>
+    </li>
+{{/slider_is_link}}
+{{^slider_is_link}}
+ <li><img src="{{slider_img}}" alt="{{slider_text}}" data-description="{{slider_text}}"></li>
+{{/slider_is_link}}
+
+{{/get_sliders}}
+
+
+</ul>
+<div class="clear clearfix"></div>
+</div>
+{{/no_sliders}}
+
+<!-- main -->
+<div class="main_cont">

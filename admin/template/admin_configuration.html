@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<!-- created by dedihost.org -->
+<html lang="en">
+<head>
+{{> meta }}
+</head>
+<body class="skin-red">
+{{> header }}
+
+{{> sidebar }}
+
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+          <h1>
+            Конфигурация
+          </h1>
+		  <hr style="border-color:red"/>
+		  
+	     <div class='row'>
+	    <div class='col-md-12'>
+	    
+	    <div class="box box-danger">
+	    <div class="box-header with-border">
+	    <h3 class="box-title">Подробна конфигурация на сайта</h3>
+	    </div>
+	    <div class="box-body">		
+
+        <form method="post" style="max-width:700px">
+        
+		<a href="#" data-toggle="tooltip" title="Името на сайта, което се ползва в тайтълите, контактната форма и на други места в системата."><i class="fa fa-question-circle"></i></a>
+		<div class="input-group">
+		<span class="input-group-addon"><i class="fa fa-globe"></i></span>
+		<input type="text" name="site_name" value="{{site_name}}" class="form-control" required />
+		</div>
+		
+		<a href="#" data-toggle="tooltip" title="По-начало е Your Gaming Community"><i class="fa fa-question-circle"></i></a>
+		<div class="input-group">
+		<span class="input-group-addon"><i class="fa fa-globe"></i></span>
+		<input type="text" name="small_text_header" value="{{logo_text_small}}" class="form-control" required />
+		</div>
+		
+		<a href="#" data-toggle="tooltip" title="По-начало е ARGOS"><i class="fa fa-question-circle"></i></a>
+		<div class="input-group">
+		<span class="input-group-addon"><i class="fa fa-globe"></i></span>
+		<input type="text" name="big_text_header" value="{{logo_text_big}}" class="form-control" required />
+		</div>
+		
+		<a href="#" data-toggle="tooltip" title="Може да е качена в някоя директория, а може и от CDN/външен сайт."><i class="fa fa-question-circle"></i></a>
+		<div class="input-group">
+		<span class="input-group-addon"><i class="fa fa-file-image-o"></i></span>
+		<input type="text" name="favicon" value="{{favicon}}" class="form-control" />
+		</div>
+		
+		<a href="#" data-toggle="tooltip" title="Ползва се в контаткната форма и на други места по сайта."><i class="fa fa-question-circle"></i></a>
+		<div class="input-group">
+		<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+		<input type="text" name="admin_mail" value="{{admin_email}}" class="form-control" required />
+		</div>
+		
+		<a href="#" data-toggle="tooltip" title="Фейсбук линк (показва се в страничното меню, само ако социалните иконки са включени по-долу!)"><i class="fa fa-question-circle"></i></a>
+		<div class="input-group">
+		<span class="input-group-addon"><i class="fa fa-facebook"></i></span>
+		<input type="text" name="fb_link" value="{{fb_link}}" class="form-control" />
+		</div>
+		
+		<a href="#" data-toggle="tooltip" title="Туитър линк (показва се в страничното меню, само ако социалните иконки са включени по-долу!)"><i class="fa fa-question-circle"></i></a>
+		<div class="input-group">
+		<span class="input-group-addon"><i class="fa fa-twitter"></i></span>
+		<input type="text" name="tw_link" value="{{tw_link}}" class="form-control" />
+		</div>
+		
+		<a href="#" data-toggle="tooltip" title="Google+ линк (показва се в страничното меню, само ако социалните иконки са включени по-долу!)"><i class="fa fa-question-circle"></i></a>
+		<div class="input-group">
+		<span class="input-group-addon"><i class="fa fa-google-plus"></i></span>
+		<input type="text" name="goo_link" value="{{goo_link}}" class="form-control" />
+		</div>
+		
+		
+		<a href="#" data-toggle="tooltip" title="Описателен текст в хедъра (на проекта) или поздравително съобщение"><i class="fa fa-question-circle"></i></a>
+		<div class="input-group">
+		<span class="input-group-addon"><i class="fa fa-info"></i></span>
+		<textarea name="head_box_text" class="form-control">{{head_box_text}}</textarea>
+		</div>
+		
+		<a href="#" data-toggle="tooltip" title="Линк в хедъра (към важна новина или съобщение)"><i class="fa fa-question-circle"></i></a>
+		<div class="input-group">
+		<span class="input-group-addon"><i class="fa fa-info"></i></span>
+		<input type="text" name="last_news_link" value="{{last_news_link}}" class="form-control" />
+		</div>
+		
+		<a href="#" data-toggle="tooltip" title="Име на линка (за по-горния линк) Седи между ahref връзката"><i class="fa fa-question-circle"></i></a>
+		<div class="input-group">
+		<span class="input-group-addon"><i class="fa fa-info"></i></span>
+		<input type="text" name="last_news_name" value="{{last_news_name}}" class="form-control" />
+		</div>
+		
+		<a href="#" data-toggle="tooltip" title="Google Analytics ID, example: UA-52018522-1"><i class="fa fa-question-circle"></i></a>
+		<div class="input-group">
+		<span class="input-group-addon"><i class="fa fa-google"></i></span>
+		<input type="text" name="google_analytics" value="{{google_analytics}}" placeholder="Google Analytics ID" class="form-control" />
+		</div>
+		
+		<a href="#" data-toggle="tooltip" title="Google Site Verify Key, example: chKyhxLNUlbPPJZF-_RCy3qi5Ss8xIXTvHH67SXCLqc"><i class="fa fa-question-circle"></i></a>
+		<div class="input-group">
+		<span class="input-group-addon"><i class="fa fa-google"></i></span>
+		<input type="text" name="google_site_verify" value="{{google_site_verify}}" placeholder="Google Site Verify Key" class="form-control" />
+		</div>
+		
+		<a href="#" data-toggle="tooltip" title="Google Recaptcha Secret"><i class="fa fa-question-circle"></i></a>
+		<div class="input-group">
+		<span class="input-group-addon"><i class="fa fa-google"></i></span>
+		<input type="text" name="google_recaptcha_secret" value="{{google_recaptcha_secret}}" placeholder="Google Recaptcha Secret" class="form-control" />
+		</div>
+		
+		<a href="#" data-toggle="tooltip" title="Google Recaptcha Site Key"><i class="fa fa-question-circle"></i></a>
+		<div class="input-group">
+		<span class="input-group-addon"><i class="fa fa-google"></i></span>
+		<input type="text" name="google_recaptcha_sitekey" value="{{google_recaptcha_sitekey}}" placeholder="Google Recaptcha Site Key" class="form-control" />
+		</div>
+		 
+		 <label class="ios7-switch">
+		 <input name="gallery_enable" type="checkbox" {{gallery_enable}}>
+		 <span></span>
+		 Изключи/включи галерията.
+		 </label>
+		 <br/>
+		 <label class="ios7-switch">
+		 <input name="chat_enable" type="checkbox" {{chat_enable}}>
+		 <span></span>
+		 Изключи/включи чата.
+		 </label>
+		 <br/>
+		 <label class="ios7-switch">
+		 <input name="img_upload_enable" type="checkbox" {{img_upload_enable}}>
+		 <span></span>
+		 Изключи/включи ъплоуда на изображения.
+		 </label>
+		 <br/>
+		 <label class="ios7-switch">
+		 <input name="upload_enable" type="checkbox" {{file_upload_enable}}>
+		 <span></span>
+		 Изключи/включи прегледа на файлове.
+		 </label>
+		 <br/>
+		 <label class="ios7-switch">
+		 <input name="poll_enable" type="checkbox" {{poll_enable}}>
+		 <span></span>
+		 Изключи/включи анкетата.
+		 </label>
+		 <br/>
+		 <label class="ios7-switch">
+		 <input name="stats_enable" type="checkbox" {{stats_enable}}>
+		 <span></span>
+		 Изключи/включи статистиката във фуутъра.
+		 </label>
+		 <br/>
+		 <label class="ios7-switch">
+		 <input name="socials_enable" type="checkbox" {{socials_enable}}>
+		 <span></span>
+		 Изключи/включи социалните икони в страничното меню.
+		 </label>
+		 <br/>
+		 <label class="ios7-switch">
+		 <input name="servers_enable" type="checkbox" {{servers_enable}}>
+		 <span></span>
+		 Изключи/включи показването на сървъри.
+		 </label>
+		 <br/>
+		 <label class="ios7-switch">
+		 <input name="cookie_policy_enable" type="checkbox" {{cookie_policy_enable}}>
+		 <span></span>
+		 Изключи/включи показването на cookie policy bar.
+		 </label>
+		 <br/>
+		 <label class="ios7-switch">
+		 <input name="video_enable" type="checkbox" {{video_enable}}>
+		 <span></span>
+		 Изключи/включи ъплоуда на видео клипчета.
+		 </label>
+		 <br/>
+		 <label class="ios7-switch">
+		 <input name="rating_enable" type="checkbox" {{rating_enable}}>
+		 <span></span>
+		 Изключи/включи рейтинг системата за новини и коментари!
+		 </label>
+		 <br/>
+		 Език по-начало:<br/>
+		 <select name="language_now">
+		 <option value="bg" {{default_lang_bg}}>Български</option>
+		 <option value="en" {{default_lang_en}}>Английски</option>
+		 <option value="ru" {{default_lang_ru}}>Руски</option>
+		 </select><br/>
+		 
+		 Стил по-начало:<br/>
+		 <select name="style_now">
+		 {{&styles_name}}
+		 </select><br/>
+ 
+		<br/>
+		<input type="submit" name="submit_changes" class="btn btn-md btn-success" value="Промени"/>
+
+        </form>	
+		
+        {{#site_changes}}
+		<br/>
+		<div class="alert alert-success"><i class="fa fa-check"></i> {{site_changes}}</div>
+		<meta http-equiv="refresh" content="1">
+		{{/site_changes}}
+		
+	    <hr/>
+		
+		<form method="post" style="display:inline-block">
+		<input type="submit" name="submit_chat_del" value="Изтрий всички чат съобщения" class="btn btn-md btn-info"/>
+		</form>
+		
+		<form method="post" style="display:inline-block">
+		<input type="submit" name="submit_cache" value="Изтрий кеша" class="btn btn-md btn-danger"/>
+		</form>
+		
+		{{#cache_delete}}
+		<br/><br/>
+		<div class="alert alert-success" style="max-width:300px">{{cache_delete}}</div>
+		{{/cache_delete}}
+		
+		{{#chat_delete}}
+		<br/><br/>
+		<div class="alert alert-success" style="max-width:300px">{{chat_delete}}</div>
+		{{/chat_delete}}
+		
+	    </div>
+	    </div>
+	    
+	    </div>
+	     </div>
+
+		  
+          <ol class="breadcrumb">
+            <li><a href="index.php"><i class="fa fa-dashboard"></i> Admin</a></li>
+            <li class="active">Конфигурация</li>
+          </ol>
+        </section>
+
+  
+      </div><!-- /.content-wrapper -->
+
+{{> footer }}

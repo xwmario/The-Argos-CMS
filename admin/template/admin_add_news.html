@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!-- created by dedihost.org -->
+<html lang="en">
+<head>
+{{> meta }}
+</head>
+<body class="skin-red">
+{{> header }}
+
+{{> sidebar }}
+
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+          <h1>
+           Създаване на новина в сайта
+          </h1>
+		  <hr style="border-color:red"/>
+		  
+	     <div class='row'>
+	    <div class='col-md-12'>
+	    
+	    <div class="box box-danger">
+	    <div class="box-header with-border">
+	    <h3 class="box-title">Добавяне на новина</h3>
+	    </div>
+	    <div class="box-body">		   
+	    
+		<form method="post" style="max-width:700px">
+        <input type="hidden" name="admin_poster" value="{{username}}"/>
+		
+		<div class="input-group">
+		<span class="input-group-addon"><i class="fa fa-pencil"></i></span>
+		<input type="text" name="news_name" placeholder="Име на новината" class="form-control" required>
+		</div>
+		<br/>
+		
+		<div class="input-group">
+		<span class="input-group-addon"><i class="fa fa-image"></i></span>
+		<input type="text" name="img_link" placeholder="Линк към изображение (158x128)" class="form-control" required>
+		</div>
+		<br/>
+		
+		<label class="ios7-switch">
+		<input name="news_comment_enable" type="checkbox">
+		<span></span>
+		Изключи/включи коментарите.
+		</label><br/>
+		
+		<textarea class="darcy" data-editor="php" name="text" style="height:200px;width:100%" required></textarea><br/>
+		<input type="submit" name="submit_news" value="Изпрати" class="btn btn-md btn-success"/>
+
+        </form>		
+	    {{#news_add}}<br/><div class="alert alert-success"><i class="fa fa-check"></i> {{news_add}}</div> {{/news_add}}
+			 
+		</div>
+	    </div>
+	    
+	    </div>
+	     </div>
+
+		  
+          <ol class="breadcrumb">
+            <li><a href="index.php"><i class="fa fa-dashboard"></i> Admin</a></li>
+            <li class="active">Добави Новина</li>
+          </ol>
+        </section>
+
+  
+      </div><!-- /.content-wrapper -->
+
+{{> footer }}

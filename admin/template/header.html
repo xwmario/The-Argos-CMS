@@ -1,0 +1,113 @@
+    <div class="wrapper">  
+	  <!-- Main Header -->
+      <header class="main-header">
+
+        <!-- Logo -->
+        <a href="index.php" class="logo"><b>Argos</b></a>
+
+        <!-- Header Navbar -->
+        <nav class="navbar navbar-static-top" role="navigation">
+          <!-- Sidebar toggle button-->
+          <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+            <span class="sr-only">Toggle navigation</span>
+          </a>
+          <!-- Navbar Right Menu -->
+          <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">
+              <!-- Messages: style can be found in dropdown.less-->
+              <li class="dropdown messages-menu">
+                <!-- Menu toggle button -->
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <i class="fa fa-envelope-o"></i>
+                 {{#total_new_pm}} <span class="label label-success">{{total_new_pm}}</span> {{/total_new_pm}}
+                </a>
+                <ul class="dropdown-menu">
+                  <li class="header">Имате {{total_new_pm}} съобщения</li>
+                  <li>
+                    <!-- inner menu: contains the messages -->
+                    <ul class="menu">
+					{{#contact_pms}}
+                      <li><!-- start message -->
+                        <a href="view_emails.php">
+                          <div class="pull-left">
+                            <!-- User Image -->
+                            <img src="http://i.imgur.com/z8HTWpR.png" class="img-circle" alt="User Image"/>
+                          </div>
+                          <!-- Message title and timestamp -->
+                          <h4>                            
+                            {{contact_quest}}
+                            <small><i class="fa fa-clock-o"></i> {{contact_date}}</small>
+                          </h4>
+                          <!-- The message -->
+                          <p>{{contact_text}}</p>
+                        </a>
+                      </li><!-- end message -->  
+                  {{/contact_pms}}					  
+                    </ul><!-- /.menu -->
+                  </li>
+                  <li class="footer"><a href="view_emails.php">Виж всички съобщения</a></li>
+                </ul>
+              </li><!-- /.messages-menu -->
+
+      
+              <!-- Tasks Menu -->
+              <li class="dropdown tasks-menu">
+                <!-- Menu Toggle Button -->
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <i class="fa fa-flag-o"></i>
+                  {{#total_new_reports}}<span class="label label-danger">{{total_new_reports}}</span>{{/total_new_reports}}
+                </a>
+                <ul class="dropdown-menu">
+                  <li class="header">Има {{total_new_reports}} доклада</li>
+                  <li>
+                    <!-- Inner menu: contains the tasks -->
+                    <ul class="menu">
+                      <li><!-- Task item -->
+                        <a href="{{reports_link}}" target="_blank">
+                          <!-- Task title and progress text -->
+                          <h3>
+                           Моля, посетете форума<br/> и ги прегледайте!
+                          </h3>
+                        </a>
+                      </li><!-- end task item -->                      
+                    </ul>
+                  </li>
+                  <li class="footer">
+                    <a href="{{reports_link}}" target="_blank">Виж всички доклади</a>
+                  </li>
+                </ul>
+              </li>
+              <!-- User Account Menu -->
+              <li class="dropdown user user-menu">
+                <!-- Menu Toggle Button -->
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <!-- The user image in the navbar-->
+                 <span class="user-image">{{&user_avatar}}</span>
+                  <!-- hidden-xs hides the username on small devices so only the image appears. -->
+                  <span class="hidden-xs">{{username}}</span>
+                </a>
+                <ul class="dropdown-menu">
+                  <!-- The user image in the menu -->
+                  <li class="user-header">
+                   {{&user_avatar}}
+                    <p>
+                      {{username}}
+                      <small>Administrator</small>
+                    </p>
+                  </li>
+ 
+                  <!-- Menu Footer-->
+                  <li class="user-footer">
+                    <div class="pull-left">
+                      <a href="{{forum_path}}/memberlist.php?mode=viewprofile&amp;u={{user_id}}" class="btn btn-default btn-flat">Profile</a>
+                    </div>
+                    <div class="pull-right">
+                      <a href="#" onclick="location.href='{{user_logout}}'" class="btn btn-default btn-flat">Sign out</a>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>

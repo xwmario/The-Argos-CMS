@@ -1,0 +1,22 @@
+{{#no_banners_468x60}}
+<div class="rekt_now"><a href="contact.php">{{lang_your_banner_here}}</a></div>
+{{/no_banners_468x60}}
+{{^no_banners_468x60}} 
+{{#get_468x60}}
+<div class="rekt_now"><a href="{{banner_link_468x60}}" title="{{banner_title_468x60}}" rel="nofollow"><img alt="" src="{{banner_img_468x60}}"/></a></div>
+{{/get_468x60}}
+{{/no_banners_468x60}}
+
+<div class="rekt_now2">
+<ul id="mycarousel" class="jcarousel-skin-tango">
+{{#no_banners_88x31}}
+<li><a href="contact.php">{{lang_your_banner_here}}</a></li>
+{{/no_banners_88x31}}
+{{^no_banners_88x31}} 
+{{#get_88x31}}
+<li><a title="{{banner_title_88x31}}" rel="nofollow" href="{{banner_link_88x31}}"><img src="{{banner_img_88x31}}" width="88" height="31" alt="" /></a></li> 
+{{/get_88x31}}
+{{/no_banners_88x31}}
+</ul>
+</div>
+<div class="clear clearfix"></div>

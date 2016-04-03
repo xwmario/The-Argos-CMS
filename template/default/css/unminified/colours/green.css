@@ -1,0 +1,82 @@
+body {
+background:url(../../img/colours/green/green.jpg)  fixed no-repeat;
+}
+#headmenu {
+background:#26A65B;
+}
+#headmenu:after{
+border-color: transparent #26A65B #26A65B transparent;
+}
+#headmenu:before{
+border-color: transparent transparent #26A65B #26A65B;
+}
+#headmenu a {
+color:#fff !important;
+}
+#headmenu a:hover {
+color:#C8F7C5 !important;
+}
+.box {
+background:#E4F1FE;
+color:#000;
+}
+.boxhead_L { 
+background:#00B16A;
+background: #00B16A -webkit-linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+background: #00B16A -moz-linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+background: #00B16A -ms-linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+background: #00B16A -o-linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+background: #00B16A linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+}
+.boxhead_R {
+background: #FDE3A7;
+background: #FDE3A7 -webkit-linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+background: #FDE3A7 -moz-linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+background: #FDE3A7 -ms-linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+background: #FDE3A7 -o-linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+background: #FDE3A7 linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+}
+
+.boxhead_titles {
+background:#BDC3C7;border:1px solid #2C3E50;color:#000;
+}
+
+.boxhead_titles a:hover {color:#000 !important;}
+
+.slider_argos {
+background:#26A65B;
+}
+
+.comments_block {
+background:#BDC3C7;
+}
+
+.main_cont {
+background:#049372;
+}
+
+.footerbe {
+background:#26C281;color:#34495E;
+}
+.footerbe a {color:#000 !important;}
+
+ 
+.btn-default:hover {
+color:#6C7A89!important;
+}
+ 
+hr {
+border-color:#26C281;
+}
+
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+border-top: 1px solid #26C281;
+}
+.form-control,.input-group-addon  { 
+background:#BDC3C7;border:1px solid #34495E;
+}
+
+.statistika {
+color:#C8F7C5;
+background:#34495E;
+}

@@ -1,0 +1,38 @@
+<br/>
+<div class="footerbe">
+{{lang_design_from}}: <a href="#">val4o0o0</a> <i class="fa fa-copyright"></i> <a href="http://dedihost.org" rel="nofollow">Dedihost.org</a> / {{lang_allrights}} 2013-{{current_year}}.
+</div>
+
+</div> <!-- end main -->
+
+</div> <!-- end container -->
+
+
+{{> sidr }}
+
+
+<div class="scroll-btn"><div class="scroll-btn-arrow"></div></div>
+
+<script type="text/javascript" src="{{baseurl}}/template/{{current_style}}/js/head_ready.js"></script>
+
+{{#jquery_js}}
+<script>head.ready(function () { {{&jquery_js}} });</script>
+{{/jquery_js}}
+
+{{#all_custom_pages}}
+<div id="cd-nav" class="cd-nav">
+		<div class="cd-navigation-wrapper">
+			<div class="cd-half-block">
+				<h2>Menu</h2>
+				<nav>
+					<ul class="cd-primary-nav">
+						{{&all_custom_pages}}
+					</ul>
+				</nav>
+			</div>
+		</div>
+</div>
+{{/all_custom_pages}}
+	
+</body>
+</html>

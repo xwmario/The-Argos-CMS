@@ -1,0 +1,125 @@
+<!-- daily unique stats -->
+ <div class='row'>
+ 
+<div class='col-md-4'>
+
+<div class="box box-danger">
+<div class="box-header with-border">
+<h3 class="box-title">Уникални посещения</h3>
+</div>
+<div class="box-body">		   
+<div id="chart_div"></div>
+</div>
+</div>
+
+</div>
+ 
+
+<!-- latest members -->
+<div class='col-md-4'>
+
+<div class="box box-warning">
+<div class="box-header with-border">
+<h3 class="box-title">Последни потребители</h3>
+</div>
+<div class="box-body no-padding">
+<ul class="users-list clearfix">
+{{#newest_members}}
+<li>
+<img src="{{new_user_ava}}" alt="User Image"/>
+<a class="users-list-name" href="{{baseurl}}/{{forum_path}}/memberlist.php?mode=viewprofile&amp;u={{new_userid}}">{{new_username}}</a>
+<span class="users-list-date">{{new_user_regdate}}</span>
+</li>
+{{/newest_members}}
+</ul>
+</div>
+</div>
+
+</div>
+
+<!-- latest members -->
+<div class='col-md-4'>
+
+<div class="box box-info">
+<div class="box-header with-border">
+<h3 class="box-title">Social media статистика</h3>
+</div>
+<div class="box-body">	
+	   
+<div class='share'>
+    <div class='share-btn' data-service="total">
+       
+       Total SOCIAL SHARES : <span class="count h4"></span>
+    </div>
+    <div class='share-btn' data-service="facebook">
+        <div class="count"></div> <a class="btn btn-primary"><i class="fa fa-facebook fa-fw fa-2x"></i></a>
+    </div>
+    <div class='share-btn' data-service="twitter">
+        <div class="count"></div> <a class="btn btn-primary"><i class="fa fa-twitter fa-fw fa-2x"></i></a>
+    </div>
+    <div class='share-btn' data-service="google">
+        <div class="count"></div> <a class="btn btn-primary"><i class="fa fa-google-plus fa-fw fa-2x"></i></a>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+
+</div> <!-- end row -->
+
+ 
+<div class="row">
+
+<div class='col-md-6'>
+ 
+ <div class="box box-primary">
+<div class="box-header with-border">
+<h3 class="box-title">Форум статистика</h3>
+</div>
+<div class="box-body">	
+Онлайн потребители: {{online_users}}<br/>
+Гости: {{online_users_anonymous}}<br/>
+Общо регистрирани: {{total_users}}<br/>
+Общо теми: {{total_topics}}<br/>
+Общо форуми: {{total_forums}}<br/>
+Общо постове: {{total_posts}}<br/>
+Общо прегледи на темите: {{total_topics_views}}
+</div>
+</div>
+ 
+</div>
+ 
+<div class='col-md-6'>
+  
+<div class="box box-info">
+<div class="box-header with-border">
+<h3 class="box-title">Времето</h3>
+</div>
+<div class="box-body">	
+ <iframe width="325" style="margin: 0 auto;display:block;border:none" height="200" src="http://sinoptik.bg/widget/100727011/5/325/200/2?url=http://sinoptik.bg/widgets"></iframe>
+</div>
+</div>
+
+</div>
+
+<div class='col-md-12'>
+<div class="box box-info">
+<div class="box-header with-border">
+<h3 class="box-title">Последни новини :: {{current_time}}</h3>
+</div>
+<div class="box-body">	
+<span class="vesti_rss"><span class="loading">Зареждане...</span></span><br/>
+<hr/>
+Made by <b>Dedihost Team</b>, we make it web better!
+</div></div>
+</div>
+
+  
+</div> <!-- end row -->
+
+<div class="clear clearfix"></div>
+
+
+ 

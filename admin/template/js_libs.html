@@ -1,0 +1,440 @@
+<script type="application/javascript">
+$('.venobox').venobox(); //veno
+
+{{#is_index_page_acp}}
+<!-- index page -->
+	 //unique counter
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {var data = google.visualization.arrayToDataTable([
+ ['Day', 'Day'] ,
+ {{#daily_stats}}
+ ['{{stats_date}}',{{stats_visitors}}],
+ {{/daily_stats}}
+        ]);
+
+      var options = {
+          //title: 'Company Performance',
+          hAxis: {title: 'Day', titleTextStyle: {color: 'red'}},
+          vAxis: {title: 'Unique total views', titleTextStyle: {color: '#FF0000'}, maxValue:'5', minValue:'1'},
+        };
+  
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+} 
+
+<!-- social counter -->
+$(document).ready(function () {
+
+    // Ajax request to read share counts. Notice "&callback=?" is appended to the URL to define it as JSONP.
+    $.getJSON('http://count.donreach.com/?url=' + '{{baseurl}}' + "&callback=?", function (data) {
+        shares = data.shares;
+        $(".count").each(function (index, el) {
+            service = $(el).parents(".share-btn").attr("data-service");
+            count = shares[service];
+
+            // Divide large numbers eg. 5500 becomes 5.5k
+            if(count>1000) {
+                count = (count / 1000).toFixed(1);
+                if(count>1000) count = (count / 1000).toFixed(1) + "M";
+                else count = count + "k";
+            }
+            $(el).html(count);
+        });
+    });
+});   
+
+//vesti rss
+$(".vesti_rss").ready(function(){$.ajax({url:"https://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=7&q=http://www.vesti.bg/rss",dataType:"jsonp",success:function(e){$(e.responseData.feed.entries).each(function(e,t){var newtitle = t.title.substring(0,35);var n='<a target="_blank" rel="nofollow" title="'+t.title+'" href="'+t.link+'">'+newtitle+"...</a> :: ";$(".vesti_rss").append(n)});$(".loading").fadeOut()},error:function(){}})})
+
+{{/is_index_page_acp}}
+
+//sidebar active hover
+jQuery(function() {
+  jQuery('.sidebar-menu li a').each(function() {
+    if (jQuery(this).attr('href')  === location.pathname.split('/').slice(-1)[0]) {
+	  $(this).parent().addClass("active");
+	   
+    }
+  });
+});  
+
+<!-- pagination -->
+$('.toggle-pagination').click(function(f) {
+        $(this).next('.pagination-responsive').slideToggle();
+        $(this).toggleClass('active');
+        f.preventDefault()
+});	
+
+
+{{#is_mails_page}}
+<!-- remove pms -->
+$('.delete_mail').click(function() {
+if(confirm('Are you sure?!')) {
+$.ajax({
+url:        $(this).attr('href'), //взимаме пътя на линка на цъкнатото
+type:       'GET',
+dataType:   'json', //ще използваме информацията, върната в масив от PHP, директно с JS
+success:    function(data) {
+alert(data['info']); //data - всичко в echo от kandidaturi_comments_del.php
+$('.email-' + data['id']).remove();
+}
+});
+return false; //много важно, ако го няма ще те препрати към kandidaturi_comments_del.php
+} else {
+return false;
+}
+});
+<!-- end -->
+{{/is_mails_page}}  
+
+
+{{#is_video_page_acp}}
+<!-- delete video -->
+$('.delete_video').click(function() {
+if(confirm('Are you sure?!')) {
+$.ajax({
+url:        $(this).attr('href'), //взимаме пътя на линка на цъкнатото
+type:       'GET',
+dataType:   'json', //ще използваме информацията, върната в масив от PHP, директно с JS
+success:    function(data) {
+alert(data['info']); //data - всичко в echo от kandidaturi_comments_del.php
+$('.video-' + data['id']).remove();
+}
+});
+return false; //много важно, ако го няма ще те препрати към kandidaturi_comments_del.php
+} else {
+return false;
+}
+});
+<!-- approve video -->
+$('.approved_video').click(function() {
+$.ajax({
+url:        $(this).attr('href'), //взимаме пътя на линка на цъкнатото
+type:       'GET',
+dataType:   'json', //ще използваме информацията, върната в масив от PHP, директно с JS
+success:    function(data) {
+alert(data['info']); //data - всичко в echo от kandidaturi_comments_del.php
+location.reload();
+}
+});
+return false; //много важно, ако го няма ще те препрати към kandidaturi_comments_del.php
+
+});
+<!-- end -->
+{{/is_video_page_acp}} 
+
+{{#is_menus_page}}
+<!-- remove menus -->
+$('.delete_menu').click(function() {
+if(confirm('Are you sure?!')) {
+$.ajax({
+url:        $(this).attr('href'), //взимаме пътя на линка на цъкнатото
+type:       'GET',
+dataType:   'json', //ще използваме информацията, върната в масив от PHP, директно с JS
+success:    function(data) {
+alert(data['info']); //data - всичко в echo от kandidaturi_comments_del.php
+$('.menu-' + data['id']).remove();
+}
+});
+return false; //много важно, ако го няма ще те препрати към kandidaturi_comments_del.php
+} else {
+return false;
+}
+});
+<!-- end -->
+{{/is_menus_page}}
+
+{{#is_vcat_page}}
+<!-- remove vcats -->
+$('.delete_video_cats').click(function() {
+if(confirm('Are you sure?!')) {
+$.ajax({
+url:        $(this).attr('href'), //взимаме пътя на линка на цъкнатото
+type:       'GET',
+dataType:   'json', //ще използваме информацията, върната в масив от PHP, директно с JS
+success:    function(data) {
+alert(data['info']); //data - всичко в echo от kandidaturi_comments_del.php
+$('.vcat-' + data['id']).remove();
+}
+});
+return false; //много важно, ако го няма ще те препрати към kandidaturi_comments_del.php
+} else {
+return false;
+}
+});
+<!-- end -->
+{{/is_vcat_page}}
+
+{{#is_news_page}}
+<!-- remove news -->
+$('.delete_news').click(function() {
+if(confirm('Are you sure?!')) {
+$.ajax({
+url:        $(this).attr('href'), //взимаме пътя на линка на цъкнатото
+type:       'GET',
+dataType:   'json', //ще използваме информацията, върната в масив от PHP, директно с JS
+success:    function(data) {
+alert(data['info']); //data - всичко в echo от kandidaturi_comments_del.php
+$('.news-' + data['id']).remove();
+}
+});
+return false; //много важно, ако го няма ще те препрати към kandidaturi_comments_del.php
+} else {
+return false;
+}
+});
+<!-- end -->
+{{/is_news_page}}
+
+{{#is_gallery_page_acp}}
+<!-- remove pics -->
+$('.delete_pic').click(function() {
+if(confirm('Are you sure?!')) {
+$.ajax({
+url:        $(this).attr('href'), //взимаме пътя на линка на цъкнатото
+type:       'GET',
+dataType:   'json', //ще използваме информацията, върната в масив от PHP, директно с JS
+success:    function(data) {
+alert(data['info']); //data - всичко в echo от kandidaturi_comments_del.php
+$('.pic-' + data['id']).remove();
+}
+});
+return false; //много важно, ако го няма ще те препрати към kandidaturi_comments_del.php
+} else {
+return false;
+}
+});
+<!-- end -->
+{{/is_gallery_page_acp}}  
+
+{{#is_poll_page}}
+<!-- remove polls -->
+$('.delete_poll').click(function() {
+if(confirm('Are you sure?!')) {
+$.ajax({
+url:        $(this).attr('href'), //взимаме пътя на линка на цъкнатото
+type:       'GET',
+dataType:   'json', //ще използваме информацията, върната в масив от PHP, директно с JS
+success:    function(data) {
+alert(data['info']); //data - всичко в echo от kandidaturi_comments_del.php
+$('.poll-' + data['id']).remove();
+}
+});
+return false; //много важно, ако го няма ще те препрати към kandidaturi_comments_del.php
+} else {
+return false;
+}
+});
+<!-- end -->
+{{/is_poll_page}}
+
+{{#is_page_page}}
+<!-- remove polls -->
+$('.delete_page').click(function() {
+if(confirm('Are you sure?!')) {
+$.ajax({
+url:        $(this).attr('href'), //взимаме пътя на линка на цъкнатото
+type:       'GET',
+dataType:   'json', //ще използваме информацията, върната в масив от PHP, директно с JS
+success:    function(data) {
+alert(data['info']); //data - всичко в echo от kandidaturi_comments_del.php
+$('.page-' + data['id']).remove();
+}
+});
+return false; //много важно, ако го няма ще те препрати към kandidaturi_comments_del.php
+} else {
+return false;
+}
+});
+<!-- end -->
+{{/is_page_page}}
+
+{{#is_servers_page}}
+<!-- remove servers -->
+$('.delete_server').click(function() {
+if(confirm('Are you sure?!')) {
+$.ajax({
+url:        $(this).attr('href'), //взимаме пътя на линка на цъкнатото
+type:       'GET',
+dataType:   'json', //ще използваме информацията, върната в масив от PHP, директно с JS
+success:    function(data) {
+alert(data['info']); //data - всичко в echo от kandidaturi_comments_del.php
+$('.server-' + data['id']).remove();
+}
+});
+return false; //много важно, ако го няма ще те препрати към kandidaturi_comments_del.php
+} else {
+return false;
+}
+});
+<!-- end -->
+{{/is_servers_page}}
+
+{{#is_files_page_acp}}
+<!-- remove files -->
+$('.delete_file').click(function() {
+if(confirm('Are you sure?!')) {
+$.ajax({
+url:        $(this).attr('href'), //взимаме пътя на линка на цъкнатото
+type:       'GET',
+dataType:   'json', //ще използваме информацията, върната в масив от PHP, директно с JS
+success:    function(data) {
+alert(data['info']); //data - всичко в echo от kandidaturi_comments_del.php
+$('.file-' + data['id']).remove();
+}
+});
+return false; //много важно, ако го няма ще те препрати към kandidaturi_comments_del.php
+} else {
+return false;
+}
+});
+<!-- end -->
+{{/is_files_page_acp}}
+
+{{#is_comments_page}}
+<!-- remove comments -->
+$('.delete_comment').click(function() {
+if(confirm('Are you sure?!')) {
+$.ajax({
+url:        $(this).attr('href'), //взимаме пътя на линка на цъкнатото
+type:       'GET',
+dataType:   'json', //ще използваме информацията, върната в масив от PHP, директно с JS
+success:    function(data) {
+alert(data['info']); //data - всичко в echo от kandidaturi_comments_del.php
+$('.comment-' + data['id']).remove();
+}
+});
+return false; //много важно, ако го няма ще те препрати към kandidaturi_comments_del.php
+} else {
+return false;
+}
+});
+<!-- end -->
+{{/is_comments_page}}  
+
+{{#is_sliders_page}}
+<!-- remove sliders -->
+$('.delete_slider').click(function() {
+if(confirm('Are you sure?!')) {
+$.ajax({
+url:        $(this).attr('href'), //взимаме пътя на линка на цъкнатото
+type:       'GET',
+dataType:   'json', //ще използваме информацията, върната в масив от PHP, директно с JS
+success:    function(data) {
+alert(data['info']); //data - всичко в echo от kandidaturi_comments_del.php
+$('.slider-' + data['id']).remove();
+}
+});
+return false; //много важно, ако го няма ще те препрати към kandidaturi_comments_del.php
+} else {
+return false;
+}
+});
+<!-- end -->
+{{/is_sliders_page}}
+
+{{#is_ownbanners_page}}
+<!-- remove own banners -->
+$('.delete_own_banner').click(function() {
+if(confirm('Are you sure?!')) {
+$.ajax({
+url:        $(this).attr('href'), //взимаме пътя на линка на цъкнатото
+type:       'GET',
+dataType:   'json', //ще използваме информацията, върната в масив от PHP, директно с JS
+success:    function(data) {
+alert(data['info']); //data - всичко в echo от kandidaturi_comments_del.php
+$('.own_banner-' + data['id']).remove();
+}
+});
+return false; //много важно, ако го няма ще те препрати към kandidaturi_comments_del.php
+} else {
+return false;
+}
+});
+<!-- end -->
+{{/is_ownbanners_page}} 
+
+{{#is_banners_page}}
+<!-- remove banners -->
+$('.delete_banner').click(function() {
+if(confirm('Are you sure?!')) {
+$.ajax({
+url:        $(this).attr('href'), //взимаме пътя на линка на цъкнатото
+type:       'GET',
+dataType:   'json', //ще използваме информацията, върната в масив от PHP, директно с JS
+success:    function(data) {
+alert(data['info']); //data - всичко в echo от kandidaturi_comments_del.php
+$('.banner-' + data['id']).remove();
+}
+});
+return false; //много важно, ако го няма ще те препрати към kandidaturi_comments_del.php
+} else {
+return false;
+}
+});
+<!-- end -->
+{{/is_banners_page}}
+
+{{#is_filesadd_page}}
+//file system
+var select_input = 0;
+var select_input2 = 0;
+	
+$("#dropdown_game").on("change", function () {
+if($('#dropdown_game').val() != '0') {
+select_input = 1
+} 
+});
+$("#dropdown_type").on("change", function () {
+if($('#dropdown_type').val() != '0') {
+select_input2 = 1
+check();
+} 
+});
+function check() {
+if(select_input == 1 && select_input2 == 1) {
+$('#game').submit();
+}
+}
+<!-- end -->
+{{/is_filesadd_page}}
+
+{{#is_html_page}}
+//html area
+	
+var selected_file ="";
+editAreaLoader.init({
+	id : "textarea_1"		// textarea id
+	,language: "bg"
+	,start_highlight: true		// to display with highlight mode on start-up
+	,is_editable: true
+	,toolbar:  "charmap, |, search, go_to_line, |, undo, redo, |, select_font, |, change_smooth_selection, highlight, reset_highlight, |, help"
+	,syntax_selection_allow: "css,html,js,php"  
+});
+
+$('.htmlfiles').on('change', function() {
+selected_file = this.value;
+$.get(this.value, function(data) {
+editAreaLoader.openFile('textarea_1', {id: this.value, text: data, syntax: 'php', title: 'file'});
+editAreaLoader.setValue('textarea_1', data);
+});
+
+$( ".submit_html" ).click(function() {
+var form = $('.submitform');
+var selected_content =  editAreaLoader.getValue('textarea_1');
+$.ajax({
+                    type: "POST", //метод
+                    url: "ajax_served/edit_html.php", //от къде ще взимаме резултатите
+					data: {content:selected_content,html_file:selected_file},
+                    success: function(mqy) {
+                       $("#res1").html(mqy); //парсваме информацията там <div id="res1"></div>
+                    } 
+    });
+return false;
+});
+ 
+});
+<!-- end -->
+{{/is_html_page}}
+</script>

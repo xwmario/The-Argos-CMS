@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<!-- created by dedihost.org -->
+<html lang="en">
+<head>
+{{> meta }}
+</head>
+<body class="skin-red">
+{{> header }}
+
+{{> sidebar }}
+
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+          <h1>
+           Добавяне на файл
+          </h1>
+		  <hr style="border-color:red"/>
+		  
+	     <div class='row'>
+	    <div class='col-md-12'>
+	    
+	    <div class="box box-danger">
+	    <div class="box-header with-border">
+	    <h3 class="box-title">Добавяне на файл</h3>
+	    </div>
+	    <div class="box-body">		   
+	    <div class="alert alert-info">Първо изберете игра и тип, а след това попълнете и по-долните полета!</div>
+		
+		<form method="post" id="game">
+		За игра: <span style='color:red'>*</span>
+		<select name="dropdown_game" id="dropdown_game">
+		<option value="0" selected="selected"> - Избери - </option>
+		<option value="1">CS 1.6</option>
+		<option value="2">CS GO</option>
+		<option value="3">SAMP</option>
+		<option value="4">Minecraft</option>
+		</select>
+		<br/>
+		Тип на файла: <span style='color:red'>*</span>
+		<select name="dropdown_type" id="dropdown_type">
+		<option value="" selected="selected"> - Избери - </option>
+		<option value="1">Плъгин</option>
+		<option value="2">Карта</option>
+		<option value="3">Скин</option>
+		<option value="4">Програма</option>
+		</select>
+		</form><br/>
+		
+		{{#form_cant_submit}}
+        <div class="alert alert-warning">{{form_cant_submit}}</div>
+		{{/form_cant_submit}}
+		{{^form_cant_submit}}
+		<div class="alert alert-success">Формата може да бъде попълнета. // {{file_game}} <i class="fa fa-arrow-circle-right"></i> {{file_type}}</div>
+		{{/form_cant_submit}}
+		
+		<form method="post" style="max-width:700px">
+        
+		{{&ready_template}}
+		
+		<input type="hidden" name="file_game" value="{{file_game_not_real}}"/>
+		<input type="hidden" name="file_type" value="{{file_type_not_real}}"/>
+		
+		<div class="input-group">
+		<span class="input-group-addon"><i class="fa fa-pencil"></i></span>
+		<input type="text" name="file_name" placeholder="Име на файла" class="form-control" required>
+		</div>
+		<br/>
+		
+		<div class="input-group">
+		<span class="input-group-addon"><i class="fa fa-image"></i></span>
+		<input type="text" name="file_img" placeholder="Линк към изображение" class="form-control">
+		</div>
+		<br/>
+		
+		<div class="input-group">
+		<span class="input-group-addon"><i class="fa fa-file"></i></span>
+		<input type="text" name="file_link" placeholder="Линк към файла" class="form-control" required>
+		</div>
+		<br/>
+		
+		<div class="input-group">
+		<span class="input-group-addon"><i class="fa fa-file"></i></span>
+		<input type="text" name="file_size" placeholder="Размер на файла (може да напишете директно 5mb или 20kb)" class="form-control" required>
+		</div>
+		<br/>
+		
+		<div class="input-group">
+		<span class="input-group-addon"><i class="fa fa-user"></i></span>
+		<input type="text" name="file_author" placeholder="Автор на файла" class="form-control" required>
+		</div>
+		<br/>
+		
+		Описание:<br/>
+		<textarea class="darcy" data-editor="php" name="opisanie" style="height:200px;width:100%" required></textarea><br/>
+		
+		<input type="submit" name="submit_file" value="Изпрати" class="btn btn-md btn-success"/>
+
+        </form>		
+	    {{#file_add}}<br/> {{&file_add}}{{/file_add}}
+			 
+		</div>
+	    </div>
+	    
+	    </div>
+	     </div>
+
+		  
+          <ol class="breadcrumb">
+            <li><a href="index.php"><i class="fa fa-dashboard"></i> Admin</a></li>
+            <li class="active">Добави файл</li>
+          </ol>
+        </section>
+
+  
+      </div><!-- /.content-wrapper -->
+
+{{> footer }}

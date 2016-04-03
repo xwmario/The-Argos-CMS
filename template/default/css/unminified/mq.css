@@ -1,0 +1,133 @@
+@media all and (max-width: 375px) {
+.avatar  {
+display:none !important;
+}
+
+.h-overlay div {
+top:10px !important;
+}
+
+}
+
+@media all and (max-width: 240px) {
+.h-overlay i {
+font-size:11px !important;
+}
+.logo {
+font-size:35px !important;
+}
+#headmenu a {
+font-size:12px !important;
+top:-2px!important;
+}
+.chat_smilies {
+display:none;
+}
+}
+
+@media all and (max-width: 414px) {
+.motd,.motd_hr {
+display:none !important;
+}
+
+.logo {
+text-align:center !important;
+margin:25px 0 0 0 !important;
+}
+
+}
+
+@media all and (max-width: 960px) {
+.left_menu {
+width:100% !important;
+max-width:100% !important;
+float:none !important;
+margin:0px !important;
+}
+
+.right_menu {
+width:100% !important;
+max-width:100% !important;
+float:none !important;
+margin:0px !important;
+}
+
+}
+
+@media all and (min-width: 1024px) and (max-width: 1152px) {
+.left_menu {
+width:640px !important;
+}
+}
+
+
+@media all and (max-width: 736px) {
+.box-stats {
+display:none !important;
+}
+}
+
+@media all and (max-width: 768px) {
+.rekt_now,.rekt_now2 {
+display:none !important;
+}
+}
+ 
+@media only screen and (max-width: 700px), only screen and (max-device-width: 700px) {
+.scroll-btn {
+bottom: 8px;
+right: 8px;
+}
+	
+}
+
+
+
+@media (min-width:0px) and (max-width:650px) { 
+    .toggle-pagination {
+	 margin-top:5px;
+     display: block !important;
+    }
+    .toggle-pagination.active i:before {
+        content: '\2212'
+    }
+    .pagination-responsive {
+        width: 100%;
+        margin-top: 10px;
+        display: none;
+    }
+    .pagination-responsive > li > a,
+    .pagination-responsive > li > span {
+        width: 100%;
+        margin: -5px 0 0 0;
+		z-index:1000;
+        line-height: 40px;
+        padding: 0;
+        border-radius: 0px!important;
+    }
+    .pagination-responsive > li {
+        float: left;
+		position:relative;
+        width: 20%;
+        margin-top: -1px;
+        text-align: center;
+    }
+}
+@media (max-width:480px) { 
+    .pagination-responsive > li {
+        width: 33%
+    }
+}
+@media (max-width:320px) { 
+    .pagination-responsive > li {
+        width: 50%
+    }
+}
+@media (min-width:651px) { 
+    .toggle-pagination {
+        display: none
+    }
+    .pagination-responsive {
+        display: inline-block!important
+    }
+}

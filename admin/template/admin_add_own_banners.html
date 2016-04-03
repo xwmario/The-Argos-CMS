@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!-- created by dedihost.org -->
+<html lang="en">
+<head>
+{{> meta }}
+</head>
+<body class="skin-red">
+{{> header }}
+
+{{> sidebar }}
+
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+          <h1>
+           Добавяне на банери в сайта
+          </h1>
+		  <hr style="border-color:red"/>
+		  
+	     <div class='row'>
+	    <div class='col-md-12'>
+	    
+	    <div class="box box-danger">
+	    <div class="box-header with-border">
+	    <h3 class="box-title">Добавяне на собствени банери</h3>
+	    </div>
+	    <div class="box-body">		   
+	    
+		<form method="post" style="max-width:700px">
+		
+        Тип на банера:<br/>
+		<select name="banner_type" class="form-control">
+		<option value="468x60">468x60</option>
+		<option value="88x31">88x31</option>
+		<option value="userbar">userbar</option>
+		<option value="728x90">728x90</option>
+		<option value="200x200">200x200</option>
+		<option value="120x240">120x240</option>
+		</select><br/>
+		
+
+		<div class="input-group">
+		<span class="input-group-addon"><i class="fa fa-link"></i></span>
+		<input type="text" name="banner_img" placeholder="Линк към банера" class="form-control" required>
+		</div>
+		<br/>
+
+		<div class="input-group">
+		<span class="input-group-addon"><i class="fa fa-info"></i></span>
+		<input type="text" name="banner_link_title" placeholder="Title на линка" class="form-control" required>
+		</div>
+		<br/>
+		
+		<div class="input-group">
+		<span class="input-group-addon"><i class="fa fa-user"></i></span>
+		<input type="text" name="banner_author" placeholder="Изработил (автор)" class="form-control" required>
+		</div>
+		<br/>
+		
+	
+		<input type="submit" name="submit_banner" value="Изпрати" class="btn btn-md btn-success"/>
+
+        </form>		
+	    {{#banner_add}}<br/><div class="alert alert-success"><i class="fa fa-check"></i> {{banner_add}}</div> {{/banner_add}}
+			 
+		</div>
+	    </div>
+	    
+	    </div>
+	     </div>
+
+		  
+          <ol class="breadcrumb">
+            <li><a href="index.php"><i class="fa fa-dashboard"></i> Admin</a></li>
+            <li class="active">Добави Банери</li>
+          </ol>
+        </section>
+
+  
+      </div><!-- /.content-wrapper -->
+
+{{> footer }}

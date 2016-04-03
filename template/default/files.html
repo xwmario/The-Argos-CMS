@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!-- created by dedihost.org -->
+<html lang="en">
+<head>
+{{> meta }}
+</head>
+<body>
+ 
+
+{{> header }}
+
+{{> slider }}
+
+{{> chat }}
+
+
+
+<div class="box">
+<div class="boxhead_L"><span class="boxhead_titles"><i class="fa fa-server"></i> {{lang_files}}</span></div>
+
+{{#file_upload_enable}}
+
+{{#game_set}}
+{{#files_is_ready}}
+<br/>
+<a href="{{baseurl}}/files.php"><div class="btn btn-md btn-success">{{lang_home}}</div></a>
+<br/><br/>
+{{#all_spec_files}}
+<div class="table-responsive">
+  <table class="table">
+    <tr>
+	<td style="width:20%"><i class="fa fa-file"></i> <a href="{{file_link}}" class="down_file" data-file="{{file_id}}">{{file_name}}</a></td>
+	<td style="width:80%;color:green">{{lang_info}}</td>
+	</tr>
+	<tr>
+	<td>
+	<i class="fa fa-picture-o"></i> <b>{{lang_picture}}</b>:<br/>
+	<a href="{{file_img}}" class="see_with_magnific"><img src="{{file_img}}" alt="" height="120" width="160"/></a></td>
+	<td>
+	<i class="fa fa-user"></i> <b>{{lang_author}}:</b> {{file_author}} &#8226; <b>{{lang_size}}:</b> {{file_size}}<br/>
+	<i class="fa fa-calendar"></i> <b>{{lang_upload_on}}</b> {{file_date}} &#8226; <b>{{lang_downloads_count}}</b> {{file_down_counts}}<br/>
+	<i class="fa fa-info-circle"></i> <b style='color:red'>{{lang_description}}</b><br/>
+	{{&file_opisanie}}
+	</td>
+	</tr>
+  </table>
+</div>
+{{/all_spec_files}}
+{{&file_pagination}}
+{{&no_files_here}}
+
+{{/files_is_ready}}
+{{^files_is_ready}}
+{{#choose_cat}}
+<h3>Choose category:</h3><br/>
+{{&get_files}}
+{{/choose_cat}}
+{{^choose_cat}}
+<h3>{{lang_choose_type}}:</h3><br/>
+<a href="?game={{game_type}}&amp;type=1"><div class="btn btn-success">{{lang_plugin}}</div></a>
+<a href="?game={{game_type}}&amp;type=2"><div class="btn btn-warning">{{lang_map}}</div></a>
+<a href="?game={{game_type}}&amp;type=3"><div class="btn btn-primary">{{lang_skin}}</div></a>
+<a href="?game={{game_type}}&amp;type=4"><div class="btn btn-danger">{{lang_program}}</div></a>
+{{/choose_cat}}
+{{/files_is_ready}}
+{{/game_set}}
+{{^game_set}}
+<h3>{{lang_choose_game}}:</h3><br/>
+<a href="?game=1"><div class="btn btn-success">CS 1.6</div></a>
+<a href="?game=2"><div class="btn btn-warning">CS GO</div></a>
+<a href="?game=3"><div class="btn btn-primary">SAMP</div></a>
+<a href="?game=4"><div class="btn btn-danger">Minecraft</div></a>
+{{/game_set}}
+
+{{/file_upload_enable}}
+{{^file_upload_enable}}
+<br/>
+<div class="alert alert-warning"><i class="fa fa-exclamation-triangle"></i> {{lang_files_temp_disabled}}</div>
+{{/file_upload_enable}}
+
+</div>
+
+
+
+{{> advertise }}
+
+{{> stats }}
+
+{{> footer }}

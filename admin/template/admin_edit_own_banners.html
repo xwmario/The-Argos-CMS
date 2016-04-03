@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!-- created by dedihost.org -->
+<html lang="en">
+<head>
+{{> meta }}
+</head>
+<body class="skin-red">
+{{> header }}
+
+{{> sidebar }}
+
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+          <h1>
+           Редактиране на банерите в сайта
+          </h1>
+		  <hr style="border-color:red"/>
+		  
+	     <div class='row'>
+	    <div class='col-md-12'>
+	    
+	    <div class="box box-danger">
+	    <div class="box-header with-border">
+	    <h3 class="box-title">Редактиране на банерите в сайта</h3>
+	    </div>
+	    <div class="box-body">		   
+	    <div class="alert alert-warning"><i class="fa fa-exclamation-triangle"></i> Когато изтривате банери, моля рефрешнете тази страница, за да влязат промените в сила!</div>
+		
+		 <table class="table table-striped">
+                    <tr>
+                      <th>Изображение</th>
+                      <th>Тип</th>
+					  <th>Автор</th>
+					  <th>Изтрий</th>
+	
+                    </tr>
+					{{#allbanners}}
+                    <tr class="own_banner-{{banner_id}}">
+                      <td><a class="venobox" data-type="iframe" href="ajax_served/edit_own_banners.php?id={{banner_id}}"><img alt="" src="{{&banner_img}}"/></a></td>
+                      <td>
+                      {{banner_type}}
+                      </td>
+					  <td>{{banner_author}}</td>
+					  <td><a href="ajax_served/remove_own_banners.php?id={{banner_id}}" class="delete_own_banner" style="color:red"><i class="fa fa-times"></i></a></td>
+                    </tr>
+				  {{/allbanners}}
+				</table>
+				{{&no_have_banners}}
+				{{&pagination_banners}}
+			 
+		</div>
+	    </div>
+	    
+	    </div>
+	     </div>
+
+		  
+          <ol class="breadcrumb">
+            <li><a href="index.php"><i class="fa fa-dashboard"></i> Admin</a></li>
+            <li class="active">Редактирай Банери</li>
+          </ol>
+        </section>
+
+  
+      </div><!-- /.content-wrapper -->
+
+{{> footer }}

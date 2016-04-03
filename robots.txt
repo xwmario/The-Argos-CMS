@@ -1,0 +1,20 @@
+User-agent: Baiduspider
+Disallow: /
+
+User-Agent: AhrefsBot
+Crawl-Delay: 5
+
+User-agent: Mediapartners-Google
+Disallow:
+
+User-Agent: *
+Disallow: /greyfish/
+Disallow: /lang/
+Disallow: /cache/
+Disallow: /404/
+Disallow: /custom_page_content/
+Disallow: /custom_scripts/
+Disallow: /documentation/
+Disallow: /includes/
+Disallow: /Mustache/
+Allow: /

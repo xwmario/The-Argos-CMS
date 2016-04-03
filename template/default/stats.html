@@ -1,0 +1,44 @@
+<br/>
+<div class="statistika">
+{{online_users}} {{lang_registered_stats}} {{online_users_anonymous}} {{lang_guests}}  [ <a href="{{forum_path}}/viewonline.php" target="_blank">{{lang_full_list}}</a> ]<br/>
+{{lang_groups}}: {{#group_users}} <span class="group_users" style="color: #{{group_colors}}">{{group_names}}</span> {{/group_users}}
+</div>  
+
+{{#footer_stats_enable}}
+<br />
+<div class="statistika">
+<div class="box-stats-center">
+<div class="box-stats">
+<i class="fa fa-weixin"></i><br/>
+{{total_posts}}<br/>
+{{lang_posts_stats}}<br/>
+</div>
+
+<div class="box-stats">
+<i class="fa fa-eye"></i><br/>
+{{total_topics_views}}<br/>
+{{lang_views_stats}}<br/>
+</div>
+
+<div class="box-stats">
+<i class="fa fa-users"></i><br/>
+{{total_users}}<br/>
+{{lang_users_stats}}<br/>
+</div>
+
+<div class="box-stats">
+<i class="fa fa-pie-chart"></i><br/>
+{{total_topics}}<br/>
+{{lang_topics_sm}}<br/>
+</div>
+
+<div class="box-stats">
+<i class="fa fa-pencil"></i><br/>
+{{total_forums}}<br/>
+{{lang_cats_stats}}<br/>
+</div>
+
+<div class="clear clearfix"></div>
+</div>
+</div>  
+{{/footer_stats_enable}}

@@ -1,0 +1,112 @@
+﻿body {
+    background: #551A8B;
+    background: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .2) 11%, transparent 65%, transparent 90%, rgba(255, 255, 255, .2) 10%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent) #551A8B;
+    background: -moz-linear-gradient(45deg, rgba(255, 255, 255, .2) 11%, transparent 65%, transparent 90%, rgba(255, 255, 255, .2) 10%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent) #551A8B;
+    background: -ms-linear-gradient(45deg, rgba(255, 255, 255, .2) 11%, transparent 65%, transparent 90%, rgba(255, 255, 255, .2) 10%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent) #551A8B;
+    background: -o-linear-gradient(45deg, rgba(255, 255, 255, .2) 11%, transparent 65%, transparent 90%, rgba(255, 255, 255, .2) 10%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent) #551A8B;
+    background: linear-gradient(45deg, rgba(255, 255, 255, .2) 11%, transparent 65%, transparent 90%, rgba(255, 255, 255, .2) 10%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent) #551A8B
+}
+#headmenu {
+    background: #9A32CD
+}
+#headmenu:after {
+    border-color: transparent #9A32CD #9A32CD transparent
+}
+#headmenu:before {
+    border-color: transparent transparent #9A32CD #9A32CD
+}
+#headmenu a {
+    color: #fff!important
+}
+#headmenu a:hover {
+    color: #EEAEEE!important
+}
+.box {
+    background: #FFE1FF;
+    color: #000
+}
+.boxhead_L {
+    background: #9A32CD;
+    background: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent) #9A32CD;
+    background: -moz-linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent) #9A32CD;
+    background: -ms-linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent) #9A32CD;
+    background: -o-linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent) #9A32CD;
+    background: linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent) #9A32CD
+}
+.boxhead_R {
+    background: #BF3EFF;
+    background: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent) #BF3EFF;
+    background: -moz-linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent) #BF3EFF;
+    background: -ms-linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent) #BF3EFF;
+    background: -o-linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent) #BF3EFF;
+    background: linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent) #BF3EFF
+}
+.boxhead_titles {
+    background: #551A8B;
+    border: 1px solid #2C3E50
+}
+.slider_argos {
+    background: #9A32CD
+}
+.comments_block,
+.main_cont {
+    background: #7D26CD
+}
+.btn-default,
+.footerbe {
+    background: #551A8B
+}
+.btn-default {
+    border: 1px solid #912CEE
+}
+.btn-default:hover {
+    background: #7D26CD
+}
+.pagination>li>span {
+    background: #5D478B;
+    border: 1px solid #EEAEEE
+}
+.pagination>.active>a,
+.pagination>.active>a:focus,
+.pagination>.active>a:hover,
+.pagination>.active>span,
+.pagination>.active>span:focus,
+.pagination>.active>span:hover {
+    background: #551A8B;
+    border: 1px solid #EEAEEE
+}
+.pagination>li>span:focus,
+.pagination>li>span:hover {
+    background: #FFE1FF;
+    border: 1px solid #EEAEEE
+}
+.pagination>.disabled>a,
+.pagination>.disabled>a:focus,
+.pagination>.disabled>a:hover,
+.pagination>.disabled>span,
+.pagination>.disabled>span:focus,
+.pagination>.disabled>span:hover {
+    background: #5D478B;
+    border: 1px solid #EEAEEE
+}
+hr {
+    border-color: #912CEE
+}
+.table>tbody>tr>td,
+.table>tbody>tr>th,
+.table>tfoot>tr>td,
+.table>tfoot>tr>th,
+.table>thead>tr>td,
+.table>thead>tr>th {
+    border-top: 1px solid #551A8B
+}
+.form-control,
+.input-group-addon {
+    color: #fff;
+    background: #551A8B;
+    border: 1px solid #912CEE
+}
+.box-stats,
+.statistika {
+    background: #551A8B
+}

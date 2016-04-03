@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!-- created by dedihost.org -->
+<html lang="en">
+<head>
+{{> meta }}
+</head>
+<body>
+ 
+
+{{> header }}
+
+{{> slider }}
+
+{{> chat }}
+
+
+
+<div class="box">
+<div class="boxhead_L"><span class="boxhead_titles"><i class="fa fa-server"></i> {{lang_videos}}</span></div>
+
+{{#video_upload_enable}}
+<br/><a href="{{baseurl}}/upload_video.php"><div class="btn btn-md btn-success">Upload</div></a><br/><br/>
+
+<form method="post">
+<select onchange="this.form.submit();" name="cat_choose" class="form-control" style="max-width:200px">
+<option value="0">{{lang_choose_cat}}</option>
+<option value="">{{lang_without_vcat}}</option>
+{{&allvcats}}
+</select>
+<input type="hidden" name="submit_cat_ch" />
+</form>
+<br/>
+
+{{#allvideos}}
+
+<div style="float:left;margin:5px">
+<a class="see_with_magnific_v" href="{{video_link}}" rel="nofollow"><div style="position:absolute;background:url(template/{{current_style}}/img/{{video_site}}.png);width:20px;height:20px;"></div><img src="{{video_pic}}" width="160" height="120" alt="{{video_title}}"/></a>
+<br/>
+<b>{{lang_date}}:</b> {{video_date}}<br/>
+<b>{{lang_uploader}}:</b> {{video_uploader}}
+</div>
+
+{{/allvideos}}
+<div class="clear clearfix"></div>
+
+{{&pagination_videos}}
+{{&no_have_videos}}
+
+{{/video_upload_enable}}
+{{^video_upload_enable}}
+<br/>
+<div class="alert alert-warning"><i class="fa fa-exclamation-triangle"></i> {{lang_video_temp_disabled}}</div>
+{{/video_upload_enable}}
+
+</div>
+
+
+
+{{> advertise }}
+
+{{> stats }}
+
+{{> footer }}

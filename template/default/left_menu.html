@@ -1,0 +1,101 @@
+<div class="left_menu">
+
+{{#allnews}}
+<div class="box">
+<div class="boxhead_L"><span class="boxhead_titles"><i class="fa fa-comment"></i> <a href="topic_{{news_seourl}}">{{news_title}}</a></span></div>
+<img alt="" src="{{news_img}}" class="news_img"/>
+    {{#rating_enable}}
+    <div class="vote-right home-vote">
+    <span class="upvote">
+              <span class="vote-btn" data-vote="upvote" data-my="{{news_id}}"></span>
+    </span>
+    <span class="vote-number" id="bid-{{news_id}}">{{news_votes}}</span>
+    <span class="downvote">
+              <span class="vote-btn" data-vote="downvote" data-my="{{news_id}}"></span>
+    </span>	
+	</div>
+	{{/rating_enable}}
+{{&news_text}} 
+<a href="topic_{{news_seourl}}" class="btn btn-xs btn-default">{{lang_readmore}}</a>
+<div style="clear:both"></div>
+<hr class="newshr"/>
+<i class="fa fa-user"></i> <b>{{lang_author}}</b>: <span style="color:darkred">{{news_username}}</span>, <i class="fa fa-calendar"></i> <b>{{lang_write_on}}</b>: {{news_date}},  <i class="fa fa-weixin"></i> <b>{{lang_comments}}</b>: {{news_comments}}
+</div>
+
+{{/allnews}}
+{{&no_have_news}}
+
+{{&pagination_news}}
+
+{{#news_exists}} <!-- for specific view -->
+<div class="box">
+<div class="boxhead_L"><span class="boxhead_titles"><i class="fa fa-comment"></i> {{news_title}}</span></div>
+<img alt="" src="{{news_img}}" class="news_img"/> 
+    {{#rating_enable}}
+    <div class="vote-right home-vote">
+    <span class="upvote">
+              <span class="vote-btn" data-vote="upvote" data-my="{{news_id}}"></span>
+    </span>
+    <span class="vote-number" id="bid-{{news_id}}">{{news_votes}}</span>
+    <span class="downvote">
+              <span class="vote-btn" data-vote="downvote" data-my="{{news_id}}"></span>
+    </span>
+	</div>
+	{{/rating_enable}}
+{{&news_text}}
+<div style="clear:both"></div>
+<hr class="newshr"/>
+<i class="fa fa-user"></i> <b>{{lang_author}}</b>: <span style="color:darkred">{{news_author}}</span>, <i class="fa fa-calendar"></i> <b>{{lang_write_on}}</b>: {{news_date}},  <i class="fa fa-weixin"></i> <b>{{lang_comments}}</b>: {{news_comments}}
+</div>
+ 
+<div class="box">
+<div class="boxhead_L"><span class="boxhead_titles"><i class="fa fa-weixin"></i> {{lang_comments}}</span></div>
+<br/>
+{{&no_comments_here}}
+{{#allcomments}}
+  <div class="comments-head">
+        <div class="author-avatar pull-left">
+        <div class="ava_news">{{&comment_ava}}</div> <br/>		
+		</div>
+          <div class="name pull-left">
+            <a href="{{forum_path}}/memberlist.php?mode=viewprofile&amp;u={{comment_userid}}" style="color:#{{comment_nick_color}} !important">&nbsp;{{comment_author}}</a> <span style="color:red">::</span> {{comment_date}}:<br/>
+			{{#rating_enable}}
+			<span class='upme vote-btn2' data-vote='upvote'  data-my="{{comment_id}}"></span> <span id='bid-{{comment_id}}'>{{comment_votes}}</span> <span class='downme vote-btn2' data-vote='downvote'  data-my='{{comment_id}}'></span>
+			{{/rating_enable}}			
+          </div>
+        </div>
+        <div class="clear clearfix"></div>
+		<div  style="width: 100%;">
+          <p class="comments_block">
+		  {{&comment_text}}</p>
+        </div> 
+
+{{/allcomments}}
+ 
+<hr/>
+
+{{#is_logged}}
+{{#comments_enable}}
+<form method="post">
+<input type="hidden" name="com_username" value="{{username}}" />
+<input type="hidden" name="com_user_color" value="{{user_color}}" />
+<input type="hidden" name="com_user_ava" value="{{user_avatar}}" />
+<textarea name="com_text" rows="3" class="form-control" id="emoticons_here2"></textarea><br/>
+<a href="javascript:void(0);" class="chat_smilies"><i class="fa fa-smile-o" onClick="open_pop()" ></i></a>
+<input type="submit" name="submit_comm" value="{{lang_send}}" class="btn btn-md btn-success"/>
+</form>
+{{/comments_enable}}
+{{^comments_enable}}
+<div class="alert alert-danger"><i class="fa fa-exclamation-triangle"></i> {{lang_comments_disabled}}</div>
+{{/comments_enable}}
+{{#submit_com_suc}} <br/><div class="alert alert-success"><i class="fa fa-check"></i> {{&submit_com_suc}}</div> {{/submit_com_suc}}
+{{/is_logged}}
+{{^is_logged}}
+<div class="alert alert-warning"><i class='fa fa-exclamation-triangle'></i> {{lang_post_comments_warning}}</div>
+{{/is_logged}}
+</div>
+{{/news_exists}}
+   
+{{> last_topics }}
+
+</div> 

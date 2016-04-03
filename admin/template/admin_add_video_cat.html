@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!-- created by dedihost.org -->
+<html lang="en">
+<head>
+{{> meta }}
+</head>
+<body class="skin-red">
+{{> header }}
+
+{{> sidebar }}
+
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+          <h1>
+           Добавяне на категория за видео клиповете
+          </h1>
+		  <hr style="border-color:red"/>
+		  
+	     <div class='row'>
+	    <div class='col-md-12'>
+	    
+	    <div class="box box-danger">
+	    <div class="box-header with-border">
+	    <h3 class="box-title">Добавяне на категория</h3>
+	    </div>
+	    <div class="box-body">		   
+	    
+		<form method="post" style="max-width:700px">
+
+		<div class="input-group">
+		<span class="input-group-addon"><i class="fa fa-image"></i></span>
+		<input type="text" name="video_cat_add" placeholder="Име на категорията" class="form-control" required>
+		</div>
+		<br/>
+
+		<input type="submit" name="submit_vcat" value="Изпрати" class="btn btn-md btn-success"/>
+
+        </form>		
+	    {{#video_cat_add}}<br/> {{&video_cat_add}} {{/video_cat_add}}
+			 
+		</div>
+	    </div>
+	    
+	    </div>
+	     </div>
+
+		  
+          <ol class="breadcrumb">
+            <li><a href="index.php"><i class="fa fa-dashboard"></i> Admin</a></li>
+            <li class="active">Добави видео категория</li>
+          </ol>
+        </section>
+
+  
+      </div><!-- /.content-wrapper -->
+
+{{> footer }}

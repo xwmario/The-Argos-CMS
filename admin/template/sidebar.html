@@ -1,0 +1,116 @@
+      <!-- Left side column. contains the logo and sidebar -->
+      <aside class="main-sidebar">
+
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+
+          <!-- Sidebar user panel (optional) -->
+          <div class="user-panel">
+            <div class="pull-left image">
+              {{&user_avatar}}
+            </div>
+            <div class="pull-left info">
+              <p>{{username}}</p>
+              <!-- Status -->
+              <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+            </div>
+          </div>
+
+         <!-- search form -->
+          <form action="{{forum_path}}/search.php?" method="post" class="sidebar-form">
+            <div class="input-group">
+              <input type="text" name="keywords" class="form-control" placeholder="Търси във форума"/>
+              <span class="input-group-btn">
+                <button type='submit' name='seach' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
+              </span>
+            </div>
+          </form>
+          <!-- /.search form -->
+
+          <!-- Sidebar Menu -->
+          <ul class="sidebar-menu">
+            <li class="header">НАВИГАЦИЯ</li>
+            <!-- Optionally, you can add icons to the links -->
+            <li><a href="index.php"><span>Начало</span></a></li>
+            <li><a href="configure.php"><span>Конфигурация</span></a></li>
+			<li><a href="view_emails.php"><span>Преглед на емейлите</span></a></li>
+			<li><a href="add_aboutus.php"><span>За нас</span></a></li>
+			<li><a href="edit_gallery.php"><span>Редактирай галерията</span></a></li>
+            <li class="treeview">
+              <a href="#"><span>Новини</span> <i class="fa fa-angle-left pull-right"></i></a>
+              <ul class="treeview-menu">
+                <li><a href="add_news.php">Добави новина</a></li>
+				<li><a href="edit_news.php">Редактирай новини</a></li>
+                <li><a href="edit_comments.php">Редактирай коментари</a></li>
+              </ul>
+            </li>
+		   <li class="treeview">
+              <a href="#"><span>Банери (реклама)</span> <i class="fa fa-angle-left pull-right"></i></a>
+              <ul class="treeview-menu">
+                <li><a href="add_banners.php">Добави банери</a></li>
+				<li><a href="edit_banners.php">Редактирай банери</a></li>
+              </ul>
+            </li>
+			<li class="treeview">
+              <a href="#"><span>Банери (собствени)</span> <i class="fa fa-angle-left pull-right"></i></a>
+              <ul class="treeview-menu">
+                <li><a href="add_own_banners.php">Добави банери</a></li>
+				<li><a href="edit_own_banners.php">Редактирай банери</a></li>
+              </ul>
+            </li>
+			<li class="treeview">
+              <a href="#"><span>Слайдър</span> <i class="fa fa-angle-left pull-right"></i></a>
+              <ul class="treeview-menu">
+                <li><a href="add_slider.php">Добави слайдър</a></li>
+				<li><a href="edit_sliders.php">Редактирай слайдъри</a></li>
+              </ul>
+            </li>
+			<li class="treeview">
+              <a href="#"><span>Менюта</span> <i class="fa fa-angle-left pull-right"></i></a>
+              <ul class="treeview-menu">
+                <li><a href="add_menu.php">Добави менюта</a></li>
+				<li><a href="edit_menus.php">Редактирай менюта</a></li>
+              </ul>
+            </li>
+			<li class="treeview">
+               <a href="#"><span>Анкета</span> <i class="fa fa-angle-left pull-right"></i></a>
+              <ul class="treeview-menu">
+                <li><a href="add_poll.php">Добави анкета</a></li>
+				<li><a href="edit_polls.php">Редактирай анкетите</a></li>
+              </ul>
+            </li>
+			<li class="treeview">
+               <a href="#"><span>Сървъри</span> <i class="fa fa-angle-left pull-right"></i></a>
+               <ul class="treeview-menu">
+                <li><a href="add_server.php">Добави сървър</a></li>
+				<li><a href="edit_servers.php">Редактирай сървърите</a></li>
+              </ul>
+            </li>
+			<li class="treeview">
+               <a href="#"><span>Страници</span> <i class="fa fa-angle-left pull-right"></i></a>
+               <ul class="treeview-menu">
+                <li><a href="add_pages.php">Добави страница</a></li>
+				<li><a href="edit_pages.php">Редактирай страниците</a></li>
+              </ul>
+            </li>
+			<li class="treeview">
+               <a href="#"><span>Файлове</span> <i class="fa fa-angle-left pull-right"></i></a>
+               <ul class="treeview-menu">
+                <li><a href="add_file.php">Добави файл</a></li>
+				<li><a href="edit_files.php">Редактирай файловете</a></li>
+              </ul>
+            </li>
+			<li class="treeview">
+               <a href="#"><span>Видео клипове</span> <i class="fa fa-angle-left pull-right"></i></a>
+               <ul class="treeview-menu">
+                <li><a href="add_video_cat.php">Добави категория</a></li>
+				<li><a href="edit_video_cat.php">Редактирай категории</a></li>
+				<li><a href="edit_videos.php">Редакция и одобрение</a></li>
+              </ul>
+            </li>
+		  <li><a href="html_editor.php"><span>HTML Editor</span></a></li>
+		  <li><a href="add_jquery_js.php"><span>Инжектирай Jquery/JS</span></a></li>
+          </ul><!-- /.sidebar-menu -->
+        </section>
+        <!-- /.sidebar -->
+      </aside>

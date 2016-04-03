@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!-- created by dedihost.org -->
+<html lang="en">
+<head>
+{{> meta }}
+</head>
+<body class="skin-red">
+{{> header }}
+
+{{> sidebar }}
+
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+          <h1>
+           От тук, може да вкарвате код в head_ready евента (jquery или js)
+          </h1>
+		  <hr style="border-color:red"/>
+		  
+	     <div class='row'>
+	    <div class='col-md-12'>
+	    
+	    <div class="box box-danger">
+	    <div class="box-header with-border">
+	    <h3 class="box-title">Инжектиране на Jquery/JS код в системата</h3>
+	    </div>
+	    <div class="box-body">		   
+	    Не използвайте &lt;script&gt;&lt;/script&gt;. Пишете кода директно!
+		 <form method="post">
+		 <textarea class="darcy" data-editor="php" style="width:100%;height:200px" name="jquery_js">{{jquery_js}}</textarea><br/>
+		 <input type="submit" name="submit_jquery_js" class="btn btn-md btn-success" value="Обнови"/>
+		 </form>
+	{{#submit_jquery_js}}<br/><div class="alert alert-success"><i class="fa fa-check"></i> {{submit_jquery_js}}</div> {{/submit_jquery_js}}
+			
+		</div>
+	    </div>
+	    
+	    </div>
+	     </div>
+
+		  
+          <ol class="breadcrumb">
+            <li><a href="index.php"><i class="fa fa-dashboard"></i> Admin</a></li>
+            <li class="active">Добави Jquery/JS код в Argos</li>
+          </ol>
+        </section>
+
+  
+      </div><!-- /.content-wrapper -->
+
+{{> footer }}

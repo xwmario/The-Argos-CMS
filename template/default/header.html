@@ -1,0 +1,64 @@
+{{#all_custom_pages}}
+<div class="left-hand-box">
+<div class="hidden-button"><i class="fa fa-arrow-right"></i></div>
+</div>
+{{/all_custom_pages}}
+
+{{#cookie_policy_enable}}
+<div class="cookie_bar" style="display:none">
+{{lang_cookie_policy}}
+<input type="button" class="btn btn-md btn-success cookie_accept" value="OK"/> 
+<input type="button" class="btn btn-md btn-primary" value="{{lang_privacy_policy}}" onclick="location.href='{{forum_path}}/ucp.php?mode=privacy'"/> 
+</div>
+{{/cookie_policy_enable}}
+
+<div class="container">
+
+<div class="header">
+
+<div class="h-overlay">
+<div>
+{{#is_logged}}
+{{lang_welcome}}, <a href="{{forum_path}}/memberlist.php?mode=viewprofile&amp;u={{user_id}}" target="_blank" class="tipso" title="{{lang_view_profile}}">{{username}}</a> !&nbsp;
+<a href="{{forum_path}}/ucp.php?i=pm&amp;folder=inbox" target="_blank" class="tipso" title="{{lang_pm}}">{{#unread_pm}}<span class="tochka">{{unread_pm}}</span>{{/unread_pm}}<i class="fa fa-envelope-o"></i></a>&nbsp;
+<a href="{{forum_path}}/ucp.php" target="_blank" class="tipso" title="{{lang_config}}"><i class="fa fa-wrench"></i></a>
+<span class="avatar">{{&user_avatar}}</span>
+&nbsp;
+{{/is_logged}}
+{{^is_logged}}
+<a href="{{forum_path}}/ucp.php?mode=register" class="tipso" title="{{lang_register}}"><i class="fa fa-user-plus"></i></a>&nbsp;
+<a href="{{forum_path}}/ucp.php?mode=login" class="tipso" title="{{lang_login}}"><i class="fa fa-key"></i></a>
+<span class="avatar"><img alt="" src="{{baseurl}}/assets/img/no_avatar.png"/></span>&nbsp;
+{{/is_logged}}
+<a href="" class="tipso" title="{{lang_sidr_open}}"><i class="fa fa-bars" id="open-sidr"></i></a>
+</div>
+</div> <!-- end h-overlay -->
+
+<div class="logo">
+<span>{{small_text_logo}}</span><br/>
+<div>{{big_text_logo}}</div>
+</div> <!-- end logo -->
+
+<!-- motd -->
+<hr class="motd_hr"/><div class="clear clearfix"></div>
+<div class="motd">
+{{&head_box_text}}<br/>
+<i class="fa fa-arrow-right"></i> {{lang_last_title}}: <a target="_blank" rel="nofollow" href="{{last_news_link}}">{{last_news_name}}</a>
+</div> <!-- end motd -->
+
+ 
+<div id="headmenu">
+<a href="{{baseurl}}" class="tipso" title="{{lang_home}}"><i class="fa fa-home"></i></a>
+<a href="{{forum_path}}" class="tipso" title="{{lang_forum}}"><i class="fa fa-pencil"></i></a>
+<a href="{{baseurl}}/aboutus.php" class="tipso" title="{{lang_aboutus}}"><i class="fa fa-question-circle"></i></a>
+<a href="{{baseurl}}/contact.php" class="tipso" title="{{lang_contacts}}"><i class="fa fa-envelope"></i></a>
+{{#servers_enable}}
+<a href="{{baseurl}}/servers.php" class="tipso" title="{{lang_servers}}"><i class="fa fa-server"></i></a>
+{{/servers_enable}}
+<a href="{{baseurl}}/banlist" class="tipso" title="{{lang_banlist}}"><i class="fa fa-user-times"></i></a>
+</div> <!-- end headmenu -->
+
+</div> 
+
+
+ 

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!-- created by dedihost.org -->
+<html lang="en">
+<head>
+{{> meta }}
+</head>
+<body class="skin-red">
+{{> header }}
+
+{{> sidebar }}
+
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+          <h1>
+           Емейли
+          </h1>
+		  <hr style="border-color:red"/>
+		  
+	     <div class='row'>
+	    <div class='col-md-12'>
+	    
+	    <div class="box box-danger">
+	    <div class="box-header with-border">
+	    <h3 class="box-title">Преглед и отговаряне на емейлите</h3>
+	    </div>
+	    <div class="box-body">		   
+	    <div class="alert alert-info">Всички ваши отговори се изпращат на емейла на потребителя, възможно е
+		той да отговори през емейл. Ако това стане, моля, не чакайте писмото в админ панела тук, а си проверявайте пощата!</div>
+	    
+	  
+                  <table class="table table-striped">
+                    <tr>
+                      <th>Заглавие</th>
+                      <th>Изпратил</th>
+					  <th>Дата</th>
+                      <th style="width: 40px">Отговорено</th>
+					  <th>Изтрий</th>
+                    </tr>
+					{{#allpms}}
+                    <tr class="email-{{sender_id}}">
+                      <td><a class="venobox" data-type="iframe" href="ajax_served/respond_mail.php?id={{sender_id}}">{{sender_question}}</a></td>
+                      <td>
+                       {{sender_username}}
+                      </td>
+					  <td>{{sender_date}}</td>
+                      <td><span class="badge bg-{{sender_badge}}">{{sender_respond}}</span></td>
+					  <td><a href="ajax_served/remove_mail.php?id={{sender_id}}" class="delete_mail" data-mail="{{sender_id}}" style="color:red"><i class="fa fa-times"></i></a></td>
+                    </tr>
+				  {{/allpms}}
+				</table>
+				{{&no_have_pms}}
+				{{&pagination_pm}}
+				 
+		</div>
+	    </div>
+	    
+	    </div>
+	     </div>
+
+		  
+          <ol class="breadcrumb">
+            <li><a href="index.php"><i class="fa fa-dashboard"></i> Admin</a></li>
+            <li class="active">Емейли</li>
+          </ol>
+        </section>
+
+  
+      </div><!-- /.content-wrapper -->
+
+{{> footer }}

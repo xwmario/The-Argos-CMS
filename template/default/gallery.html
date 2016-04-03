@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!-- created by dedihost.org -->
+<html lang="en">
+<head>
+{{> meta }}
+</head>
+<body>
+ 
+
+{{> header }}
+
+{{> slider }}
+
+{{> chat }}
+
+
+
+<div class="box">
+<div class="boxhead_L"><span class="boxhead_titles"><i class="fa fa-server"></i> {{lang_gallery}}</span></div>
+
+{{#gallery_enable}}
+<br/><a href="{{baseurl}}/upload_img.php"><div class="btn btn-md btn-success">Upload</div></a><br/>
+{{#allpictures}}
+
+<div style="float:left;margin:5px">
+<a class="see_with_magnific" href="{{baseurl}}/uploads/images/{{pic_link}}"><img src="{{baseurl}}/uploads/images/{{pic_link}}" width="160" height="120" alt=""/></a>
+<br/>
+<b>Дата:</b> {{pic_date}}<br/>
+<b>Качил:</b> {{pic_uploader}}
+</div>
+
+{{/allpictures}}
+<div class="clear clearfix"></div>
+
+{{&pagination_gallery}}
+{{&no_have_pics}}
+
+{{/gallery_enable}}
+{{^gallery_enable}}
+<br/>
+<div class="alert alert-warning"><i class="fa fa-exclamation-triangle"></i> {{lang_gallery_temp_disabled}}</div>
+{{/gallery_enable}}
+
+</div>
+
+
+
+{{> advertise }}
+
+{{> stats }}
+
+{{> footer }}

@@ -1,0 +1,46 @@
+<meta charset="utf-8">    
+<!-- this loads jquery asyncrounously & in parallel -->
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/headjs/1.0.3/head.load.min.js"></script>
+<script>
+head.load("//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js", "//cdnjs.cloudflare.com/ajax/libs/sidr/2.1.0/jquery.sidr.min.js","{{baseurl}}/template/{{current_style}}/js/pgwslider.min.js","{{baseurl}}/template/{{current_style}}/js/carousel.js","{{baseurl}}/template/{{current_style}}/js/tipso.min.js" {{#is_files_page}},"{{baseurl}}/template/{{current_style}}/js/jquery.magnific-popup.min.js"{{/is_files_page}}{{#is_gallery_page}},"{{baseurl}}/template/{{current_style}}/js/jquery.magnific-popup.min.js"{{/is_gallery_page}}{{#is_video_page}},"{{baseurl}}/template/{{current_style}}/js/jquery.magnific-popup.min.js"{{/is_video_page}}{{#is_uploadimg_page}},"{{baseurl}}/template/{{current_style}}/js/dropzone.js"{{/is_uploadimg_page}});
+</script>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" href="{{baseurl}}/template/{{current_style}}/css/style.css"> 
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/sidr/2.1.0/stylesheets/jquery.sidr.dark.min.css"/>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="{{baseurl}}/template/{{current_style}}/css/blank.css" type="text/css" class="colour-switcher" />
+{{#is_files_page}}
+<link rel="stylesheet" href="{{baseurl}}/template/{{current_style}}/css/magnific-popup.css">  
+{{/is_files_page}}
+
+{{#is_gallery_page}}
+<link rel="stylesheet" href="{{baseurl}}/template/{{current_style}}/css/magnific-popup.css">  
+{{/is_gallery_page}}
+
+{{#is_video_page}}
+<link rel="stylesheet" href="{{baseurl}}/template/{{current_style}}/css/magnific-popup.css">  
+{{/is_video_page}}
+
+{{#is_uploadimg_page}}
+<link rel="stylesheet" href="{{baseurl}}/template/{{current_style}}/css/dropzone.css">  
+{{/is_uploadimg_page}}
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="icon" href="{{baseurl}}/{{favicon}}">
+
+{{#google_site_verify}}
+<meta name="google-site-verification" content="{{google_site_verify}}" />
+{{/google_site_verify}}
+
+{{#google_analytics}}
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', '{{google_analytics}}', 'auto');
+		ga('send', 'pageview');
+</script>
+{{/google_analytics}}
+
+<title>{{site_name}} {{#news_exists}} - {{news_title}} {{/news_exists}} {{^news_exists}} - {{page_title}}{{/news_exists}}</title>

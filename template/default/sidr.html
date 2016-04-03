@@ -1,0 +1,81 @@
+<div id="sidr-panel-open" style="display:none">
+<h2 id="close-sidr">{{lang_close_menu}}</h2>
+<div class="style_sw">
+<ul>
+<li><a href="#" class="stylesw2"></a>
+<ul>
+<li><a href="#" data-rel="" class="switch">Default</a></li>
+<li><a href="#" data-rel="{{baseurl}}/template/{{current_style}}/css/colours/green.css" class="switch">Green</a></li>
+<li><a href="#" data-rel="{{baseurl}}/template/{{current_style}}/css/colours/blue.css" class="switch">Blue</a></li>
+<li><a href="#" data-rel="{{baseurl}}/template/{{current_style}}/css/colours/black.css" class="switch">Black</a></li>
+<li><a href="#" data-rel="{{baseurl}}/template/{{current_style}}/css/colours/purple.css" class="switch">Purple</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="clear clearfix"></div>
+
+<h2>{{lang_search}}</h2> 
+<form method="post" action="{{forum_path}}/search.php?">
+<input type="text" name="keywords" placeholder="{{lang_type_letters}}" />
+<input type="submit" name="search" value="{{lang_search}}" class="btn"/>
+</form>
+
+<br/>
+{{#is_logged}}
+<h2>{{lang_profile}}</h2>
+<div>{{lang_short_info}}:<br/>
+<b>{{lang_nick}}</b>: {{username}}<br/>
+<b>{{lang_posts}}</b>: {{user_posts}}<br/>
+<b>IP</b>: {{user_ip}}<br/>
+<b>{{lang_last_visit}}</b>: {{user_last_visit}}<br/>
+{{#is_admin}}
+<a href="{{baseurl}}/admin" target="_blank">[{{lang_admin_panel}}]</a><br/>
+<a href="{{forum_path}}/adm/index.php?sid={{session_id}}" target="_blank">[{{lang_admin_panel_f}}]</a>
+{{/is_admin}}
+</div>
+<form method="post">
+<input type="button" class="btn" onclick="location.href='{{user_logout}}'" value="{{lang_logout}}"/>
+</form>
+{{/is_logged}}
+{{^is_logged}}
+<h2>Логин форма</h2>
+<form action="{{login_proceed}}" method="post">
+<input type="hidden" name="mode" value="login" />
+<input type="text" name="username" placeholder="{{lang_user_name}}" />
+<input type="password" name="password" placeholder="{{lang_password}}" />
+<input type="submit" name="login" value="{{lang_login}}" class="btn"/>
+<input type="hidden" name="redirect" value="../index.php" />
+</form>
+{{/is_logged}}
+
+{{#socials_enable}}	
+<br/>
+<h2>{{lang_share}}</h2> 
+<div>{{lang_like}}<br/>
+<a href="{{&goo_link}}"><img alt="" src="{{baseurl}}/template/{{current_style}}/img/gp.png"/></a>
+<a href="{{&fb_link}}"><img alt="" src="{{baseurl}}/template/{{current_style}}/img/fb.png"/></a>
+<a href="{{&tw_link}}"><img alt="" src="{{baseurl}}/template/{{current_style}}/img/tw.png"/></a>
+</div>
+{{/socials_enable}}
+
+<br/>
+<h2>{{lang_lang}}</h2>
+<div>
+<a href="#" class="change_lang" data-language="bg"><img src="{{baseurl}}/assets/img/flags/bg.gif" height="14" width="20" alt="Bulgarian Language"/></a>&nbsp;
+<a href="#" class="change_lang" data-language="en"><img src="{{baseurl}}/assets/img/flags/us.gif" height="14" width="20" alt="English Language"/></a>&nbsp;
+<a href="#" class="change_lang" data-language="ru"><img src="{{baseurl}}/assets/img/flags/ru.gif" height="14" width="20" alt="Russian Language"/></a>&nbsp;
+</div>
+
+<h2>{{lang_menu}}</h2>
+<div>
+<ul>
+{{#img_upload_enable}}<li><a href="{{baseurl}}/upload_img.php">{{lang_right_up_img}}</a></li>{{/img_upload_enable}}
+{{#gallery_enable}}<li><a href="{{baseurl}}/gallery.php">{{lang_gallery}}</a></li>{{/gallery_enable}}
+{{#file_upload_enable}}<li><a href="{{baseurl}}/files.php">{{lang_files}}</a></li>{{/file_upload_enable}}
+{{#video_upload_enable}}<li><a href="{{baseurl}}/videos.php">{{lang_videos}}</a></li>{{/video_upload_enable}}
+<li><a href="{{baseurl}}/banners.php">{{lang_banners}}</a></li>
+</ul>
+</div>
+
+</div> <!-- end sidr -->
